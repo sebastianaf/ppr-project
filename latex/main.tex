@@ -1,0 +1,38 @@
+%Documento de Latex para Taller 2 Programación con restricciones
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsfonts}
+\usepackage{design_ASC}
+\usepackage{caption}
+
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+
+
+\begin{document}
+\input{titlepage.tex}
+\subsection{Modelo 1}
+Este modelo genérico propone el uso de ingredientes dinámicos para la producción de cualquier compuesto producido a partir de la mezcla de varios ingredientes teniendo en cuenta sus aportes con respecto a una distribución de restricciones.\\
+
+\subsubsection{Parámetros}
+Sea $p$ el total de galones que se desea producir de un compuesto. Sean $A$ los ingredientes del compuesto que se desea preparar donde $a_i \in A$ con $i \in [1..n]$ es un ingrediente. Sea $AB_{ab}$ el aporte $b$ con $b \in [1,m]$ de un ingrediente $a$ con $a \in [1,n]$ para el compuesto que se desea preparar. Sean $C$ los precios donde $c_i \in C$ con $i \in [1,n]$ es el costo por galón del ingrediente $i$.\\
+
+Sean $D$ los límites mínimos y máximos de aporte total donde $d_i \in D$ con $i \in [1,m]$ son los límites inferiones y superiores $\{g,l\}$ del aporte $i$.\\
+
+\subsubsection{Variables}
+Sean $E$ las cantidades necesarias de los ingredientes donde $e_i \in E$ con $i \in [1,n]$ es la cantidad de un ingrediente para producir el compuesto teniendo en cuenta sus aportes.\\
+
+\subsubsection{Restricciones}
+\begin{enumerate}
+    \item $\sum_{i=1}^n c_i= p$
+\end{enumerate}
+
+\subsubsection{Función objetivo}
+\begin{enumerate}
+    \item $min(\sum_{i=1}^n c_i*e_i)$
+\end{enumerate}
+
+\end{document}
