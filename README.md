@@ -12,7 +12,7 @@ This code is built using Minizinc, NodeJS with ExpressJS, ReactJS with CoreUI an
 Inside `minizinc` folder you can the models in Minizinc to solve the project problem.
 
 ### 2. Report document Latex source code with the PDF
-Inside `doc` folder you can find all the source code releated with the document's elaboration.
+Inside `latex` folder you can find all the source code releated with the document's elaboration.
 
 ### 3. Backend services to run Minizinc
 Inside `back` folder you can find a backend source code in NodeJS
