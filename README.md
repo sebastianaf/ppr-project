@@ -34,7 +34,7 @@ cd PPR-03
 ```
 
 ### 3. Go up the services
-Check first if you have `docker` installed typing, after that please type:
+Check first if you have `docker` installed typing next:
 ```
 docker compose --version
 docker compose -p uv-ppr-03 -up -d --build
