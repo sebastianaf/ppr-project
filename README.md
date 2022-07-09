@@ -1,4 +1,4 @@
-# PPR-03
+# PPR-project
 This code project is a final project to Programming Restrictions Paradigm of Universidad del Valle.
 
 This repo contains all about the project.
