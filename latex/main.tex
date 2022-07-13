@@ -10,29 +10,36 @@
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 
-
-
 \begin{document}
 \input{titlepage.tex}
-\subsection{Modelo 1}
-Este modelo genérico propone el uso de ingredientes dinámicos para la producción de cualquier compuesto producido a partir de la mezcla de varios ingredientes teniendo en cuenta sus aportes con respecto a una distribución de restricciones.\\
+\section{Primera parte del Proyecto}
+\subsection{Modelo}
+Un estudio de grabación desea optimizar el tiempo que contrata a un grupo de actores $A$ para grabar una telenovela titulada "Desenfreno de Pasiones", esta telenovela tiene un conjunto de escenas $E$ que deben ordenarse para cumplir con el requerimiento mencionado de manera que sea mínimo el tiempo que cada actor debe estar en el estudio. Dicho de otra manera el orden importa porque el tiempo de permanencia . \newline
+
+A continuación se describen los elementos que componen el problema según el paradigma de programación por restricciones.
 
 \subsubsection{Parámetros}
-Sea $p$ el total de galones que se desea producir de un compuesto. Sean $A$ los ingredientes del compuesto que se desea preparar donde $a_i \in A$ con $i \in [1..n]$ es un ingrediente. Sea $AB_{ab}$ el aporte $b$ con $b \in [1,m]$ de un ingrediente $a$ con $a \in [1,n]$ para el compuesto que se desea preparar. Sean $C$ los precios donde $c_i \in C$ con $i \in [1,n]$ es el costo por galón del ingrediente $i$.\\
-
-Sean $D$ los límites mínimos y máximos de aporte total donde $d_i \in D$ con $i \in [1,m]$ son los límites inferiones y superiores $\{g,l\}$ del aporte $i$.\\
+\begin{itemize}
+    \item $actores$: Cantidad de actores de la telenovela.
+    \item $escenas$: Cantidad de escenas de la telenovela.
+    \item $Costos$: Donde $costo_i$ con $i \in [1..actores]$ es el costo de contratación por unidad de tiempo de cada actor en cientos de miles unidades de dinero.
+    \item $Participaciones$: Con $participacion_{ij} \in \{0,1\}$ la participación del $i-esimo$ actor con $i \in [1..actores]$ para la $j-esima$ escena con $j \in [1..escenas]$.
+    \item $Duraciones$: Las duraciones de las escenas donde $duracion_i$ con $i \in [1..escenas]$ es la duración de una escena.
+\end{itemize}
 
 \subsubsection{Variables}
-Sean $E$ las cantidades necesarias de los ingredientes donde $e_i \in E$ con $i \in [1,n]$ es la cantidad de un ingrediente para producir el compuesto teniendo en cuenta sus aportes.\\
+\begin{itemize}
+    \item $CostoTotal = [\sum_{i=1}^{actores} costo_i * \sum_{j=1}^{escenas}duraciones_j * participacion_{ij} ]   > 0$. \newline\newline  
+    Es el costo total de grabar la telenovela definido como las sumas de los productos de el costo de cada actor con la suma de las duraciones de sus ensayos/grabaciones.
+    \item $Orden$: Es una lista de las escenas donde $orden_i \in [1..escenas]$ con $i \in [1..escenas]$ son cada una de las posiciones en orden cronológico de las escenas.
+\end{itemize}
 
 \subsubsection{Restricciones}
-\begin{enumerate}
-    \item $\sum_{i=1}^n c_i= p$
-\end{enumerate}
+
 
 \subsubsection{Función objetivo}
-\begin{enumerate}
-    \item $min(\sum_{i=1}^n c_i*e_i)$
-\end{enumerate}
+
+\subsubsection{Extras}
+Listar el máximo ahorro posible a partir de la diferencia entre el costo total máximo y el costo total mínimo.
 
 \end{document}
