@@ -1,55 +1,23 @@
-# PPR-project
-This code project is a final project to Programming Restrictions Paradigm of Universidad del Valle.
-
-This repo contains all about the project.
+# PPR-project - Backend 
 
 ## Requirements
-This code is built using Minizinc, NodeJS with ExpressJS, ReactJS with CoreUI and PostgreSQL all over containers, To run this project make sure to install [Docker compose](https://docs.docker.com/).
 
-## Repository content
+This code is built using Flask and other library (please see the `requirements.txt` for more info).
 
-### 1. Minizinc source code
-Inside `minizinc` folder you can the models in Minizinc to solve the project problem.
+Now let's follow the next steps.
 
-### 2. Report document Latex source code with the PDF
-Inside `latex` folder you can find all the source code releated with the document's elaboration.
+### 1.Create environment
+`python3 -m venv venv`
 
-### 3. Backend services to run Minizinc
-Inside `back` folder you can find a backend source code in NodeJS
+### 2.Activate environment
+Unix or MacOS:
+`source venv/bin/activate`
 
-### 4. Front service
-Inside `front` folder is the source code of the Server Side Rendering to show a GUI to use the solutions.
+Windows:
+`source venv/bin/activate.bat`
 
-## How to run in `locahost`
-This project is configured to run over LAN, please follow the next steps to achieve it.
+### 3.Install `requirements.txt`
+`pip3 install -r requirements.txt`
 
-### 1. Make sure to install `docker compose`
-Follow the instructions at [Docker's oficial web page](https://docs.docker.com/) depending of your platform.
-
-### 2. Clone this project
-Sure, to do this you need to install `git`, after clone, go in to the folder.
-```
-git clone https://github.com/sebastianaf/PPR-03
-cd PPR-03
-```
-
-### 3. Go up the services
-Check first if you have `docker` installed typing next:
-```
-docker compose --version
-docker compose -p uv-ppr-03 -up -d --build
-```
-This commands wake up the web server access it thought `localhost:3000`
-
-##Note
-This project use a predefined `.env` file to preconfigure the project to agilize the first run, for that reason ALL THE KEYS ARE PUBLIC VISIBLE, DO NOT USE THIS PROJECT TO DEPLOY ON WEB.
-
-## Folder contents
-```
-Pending to generate at the end.
-```
-
-
-
-
-
+### 4.Start App
+`python3 app.py`
