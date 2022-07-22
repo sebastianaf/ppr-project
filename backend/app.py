@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from models import app
 import numpy as np
 import re
+from desenfreno import Data
 
 # Los datos que se deben enviar desde la Api hacia el backend deben tener el siguiente estilo: 
 # key           value
@@ -57,17 +58,18 @@ def post_scene():
     availability = request.form.get("availability") # opcional
     avoid = request.form.get("avoid") # opcional
 
-    if availability and avoid:
+
+    if False: #availability and avoid:
         availability = np.matrix(availability)
         avoid = np.matrix(avoid)
+    else:
+        new_data = Data(actors, scenes, duration)
+        new_data.add_data()
+        #result = new_data()
 
-    print(f"{actors}\n{scenes}\n{duration}")
+    # print(f"{actors}\n{scenes}\n{duration}")
 
     return jsonify(response={"success": "Successfully added the new scenes."})
-
-
-
-
 
 
 ##Se empieza la ejecución de la aplicación

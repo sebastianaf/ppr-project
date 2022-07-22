@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/Users/manuel/Desktop/_Desktop/University/Semestre 22-1/PR/Proyecto/backend/venv/bin/python3.9" "$0" "$@"
-' '''
+#!/Users/manuel/Documents/Github/PPR-project/backend/venv/bin/python3.9
 # -*- coding: utf-8 -*-
 import re
 import sys
