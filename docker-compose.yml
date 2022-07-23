@@ -61,13 +61,13 @@ services:
     image: uv-ppr-ui-01
     restart: always
     environment:
-      UI_PORT: ${UI_PORT}
-      API_HOST: ${API_HOST}
+      UI_PORT: ${REACT_APP_UI_PORT}
+      API_HOST: ${REACT_APP_API_HOST}
     build:
       context: ./ui-01
       dockerfile: Dockerfile
       args:
-        UI_PORT: ${UI_PORT}
+        UI_PORT: ${REACT_APP_UI_PORT}
     depends_on:
       - uv-ppr-api-01
       - uv-ppr-api-02
