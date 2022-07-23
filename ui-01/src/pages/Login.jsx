@@ -38,6 +38,8 @@ const Login = (props) => {
           method: "POST",
         };
         setLoading(true);
+        console.log("---Host variable---");
+        console.log(api.host);
         const data = await fetch(`${api.host}/api/users/login`, req);
         const res = await data.json();
         if (!res.output) {
