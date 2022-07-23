@@ -72,7 +72,7 @@ services:
       - uv-ppr-api-01
       - uv-ppr-api-02
     ports:
-      - 9030:${UI_PORT}
+      - 9030:${REACT_APP_UI_PORT}
     networks:
       - uv-ppr
 
