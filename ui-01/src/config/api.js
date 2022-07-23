@@ -1,5 +1,5 @@
 const api = {
-  host: `https://api.ppr.enerfris.com`
+  host: process.env.REACT_APP_API_HOST,
 };
 
 export default api;
