@@ -1,7 +1,7 @@
 FROM python:latest
-COPY ["requirements.txt","/usr/uv/ppr/"]
-WORKDIR /usr/uv/ppr/
+COPY ["requirements.txt","/usr/uv/app/"]
+WORKDIR /usr/uv/app/
 RUN python3 -m pip install -r requirements.txt
-COPY [".","/usr/uv/ppr/"]
+COPY [".","/usr/uv/app/"]
 EXPOSE 5000
 CMD ["python3" "app.py"]

@@ -9,7 +9,7 @@
     "@babel/core": "^7.18.5",
     "@babel/node": "^7.17.10",
     "@babel/preset-env": "^7.17.10",
-    "morgan": "^1.10.0",
+    "muvan": "^1.10.0",
     "nodemon": "^2.0.16"
   },
   "dependencies": {
