@@ -1,5 +1,5 @@
 const app = {
-    name: "ppr-proyect",
+    name: "Desenfreno de pasiones",
     version: "1.0.0"
 }
 
