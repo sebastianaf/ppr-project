@@ -68,7 +68,6 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_UI_PORT: ${REACT_APP_UI_PORT}
-        REACT_APP_API_HOST: ${REACT_APP_API_HOST}
     depends_on:
       - uv-ppr-api-01
       - uv-ppr-api-02
