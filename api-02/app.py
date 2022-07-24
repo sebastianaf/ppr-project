@@ -26,9 +26,12 @@ def upload_file():
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
         result = f.read()
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        return result
-    return "El archivo no es válido"
+        resp = flask.Response(result)
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        return resp
+    resp = flask.Response("Archivo vacio")
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp        
 
 @app.route('/', methods=['GET'])
 def test():
