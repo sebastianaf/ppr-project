@@ -17,7 +17,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/solve', methods=['POST'])
-cross_origin(["https://ppr.enerfris.com", "http://localhost:5000"]) 
+@cross_origin(["https://ppr.enerfris.com", "http://localhost:5000"]) 
 def upload_file():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
@@ -33,7 +33,7 @@ def upload_file():
     return "El archivo no es válido"
 
 @app.route('/', methods=['GET'])
-cross_origin(["https://ppr.enerfris.com", "http://localhost:5000"])
+@cross_origin(["https://ppr.enerfris.com", "http://localhost:5000"])
 def test():
     return "uv-ppr"
 
