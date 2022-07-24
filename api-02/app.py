@@ -19,7 +19,7 @@ def allowed_file(filename):
 @app.route('/solve', methods=['POST'])
 @cross_origin()
 def upload_file():
-    models = ['models/Desenfreno.mzn']
+    models = ['Desenfreno.mzn']
     result = "" 
     target = os.path.join(getcwd(), 'upload') 
     data = request.form['dznfile']
