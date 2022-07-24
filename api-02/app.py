@@ -15,7 +15,6 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/solve', methods=['POST'])
-@cross_origin(["https://ppr.enerfris.com", "http://localhost:5000"]) 
 def upload_file():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
@@ -27,11 +26,11 @@ def upload_file():
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
         result = f.read()
+        response.headers.add('Access-Control-Allow-Origin', '*')
         return result
     return "El archivo no es válido"
 
 @app.route('/', methods=['GET'])
-@cross_origin(["https://ppr.enerfris.com", "http://localhost:5000"])
 def test():
     return "uv-ppr"
 
