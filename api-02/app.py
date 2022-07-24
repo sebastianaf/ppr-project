@@ -30,8 +30,7 @@ def upload_file():
         f = open(os.path.join(target, 'result.txt'))
         result = f.read()
         return result
-    except error:
-        print(error)
+    except :
         return "El archivo no es válido"
 
 @app.route('/', methods=['GET'])
