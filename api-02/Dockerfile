@@ -13,7 +13,7 @@ RUN apt-get update &&\
 	cd /tool && \
 	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.6.4/MiniZincIDE-2.6.4-bundle-linux-x86_64.tgz && \
 	tar -zxvf MiniZincIDE-2.6.4-bundle-linux-x86_64.tgz && \
-	mv /tool/MiniZincIDE-2.6.4-bundle-linux /tool/MiniZincIDE && \
+	mv MiniZincIDE-2.6.4-bundle-linux MiniZincIDE && \
 	rm -rf MiniZincIDE-2.6.4-bundle-linux-x86_64.tgz
 EXPOSE 5000
 CMD ["app.py"]
