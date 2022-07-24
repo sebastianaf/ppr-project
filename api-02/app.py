@@ -21,7 +21,7 @@ def allowed_file(filename):
 def upload_file():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
-    print(request)
+    print(request,":asdasd")
     try:
         data = request.body.data
         with open(os.path.join(target,'data.dzn'),'w') as dznfile : dznfile.write(data)
