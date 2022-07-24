@@ -21,9 +21,9 @@ def allowed_file(filename):
 def upload_file():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
+    print(request)
     try:
         data = request.body.data
-        print(request)
         with open(os.path.join(target,'data.dzn'),'w') as dznfile : dznfile.write(data)
         command = "./minizinc/bin/minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno.mzn') + " " + os.path.join(target, 'data.dzn') + '>' + os.path.join(target, 'result.txt')
         result = subprocess.Popen(command, shell=True)
