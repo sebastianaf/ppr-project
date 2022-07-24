@@ -95,7 +95,7 @@ const Compute = (props) => {
                           },
                           data: params,
                           params: { model: 0 },
-                          method: "POST",
+                          method: "GET",
                         };
                         const data = await fetch(`${api2.host}/solve`, req);
                         const res = await data.json();
