@@ -90,18 +90,20 @@ const Compute = (props) => {
                       try {
                         setLoading(true);
                         //fetch
+                        let data = new FormData();
+                        data.append("dznfile", params);
                         const req = {
                           headers: {
                             "content-Type": "multipart/form-data",
                           },
-                          data: params,
+                          data: data,
                           params: { model: 0 },
                           method: "GET",
                         };
-                        const data = await fetch(`${api2.host}/solve`, req);
-                        const res = await data.json();
-                        console.log(res);
-                        setParams(res);
+                        const res1 = await fetch(`${api2.host}/solve`, req);
+                        const res2 = await res1.json();
+                        console.log(res2);
+                        setParams(res2);
                         setLoading(false);
                         setCalc(true);
                       } catch (error) {
