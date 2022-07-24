@@ -38,8 +38,6 @@ const Login = (props) => {
           method: "POST",
         };
         setLoading(true);
-        console.log("---Host variable---");
-        console.log(api.host);
         const data = await fetch(`${api.host}/api/users/login`, req);
         const res = await data.json();
         if (!res.output) {
@@ -90,10 +88,10 @@ const Login = (props) => {
               alt={`logo`}
             />
             <h2 className={`mt-6 text-center text-3xl font-bold text-gray-900`}>
-              {app.name}
+              Iniciar sesión
             </h2>
             <p className={`mt-2 text-center text-sm text-slate-600`}>
-              Iniciar sesión
+              {app.name}
             </p>
           </div>
           <form className={`mt-8 space-y-6`} action={`#`} method={`POST`}>

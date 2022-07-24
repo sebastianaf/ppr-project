@@ -67,7 +67,7 @@ const DropdownUser = (props) => {
                     window.location.reload(true);
                   }}
                 >
-                  Logout
+                  Cerrar sesión
                 </button>
               )}
             </Menu.Item>
