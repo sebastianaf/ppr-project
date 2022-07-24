@@ -85,24 +85,21 @@ const Compute = (props) => {
                   focus:ring-cyan-500 duration-500 cursor-pointer disabled:hover:bg-slate-100 disabled:bg-slate-100 disabled:text-black"
                   disabled={loading}
                   onClick={async () => {
-                    console.log(params);
+                    //console.log(params);
                     if (params !== "") {
                       try {
                         setLoading(true);
                         //fetch
-                        let data = new FormData();
-                        data.append("dznfile", params);
                         const req = {
                           headers: {
                             "content-Type": "multipart/form-data",
                           },
-                          data: data,
-                          params: { model: 0 },
+                          body: JSON.stringify({ data: params }),
                           method: "POST",
                         };
                         const res1 = await fetch(`${api2.host}/solve`, req);
                         const res2 = await res1.json();
-                        console.log(res2);
+                        //console.log(res2);
                         setParams(res2);
                         setLoading(false);
                         setCalc(true);
