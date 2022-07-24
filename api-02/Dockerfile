@@ -1,8 +1,7 @@
-FROM python:3.7
+FROM python:3.9
 COPY [".","/usr/uv/app/"]
 WORKDIR /usr/uv/app/
 EXPOSE 5000
-RUN apt-get -y install python3-pip
-RUN pip3 install flask 
-RUN pip3 install -U flask-cors
-CMD ["python3" "app.py"]
+RUN python -m pip install flask
+RUN python -m pip install -U flask-cors
+CMD ["python" "app.py"]
