@@ -16,13 +16,13 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/solve', methods=['GET'])
+@app.route('/solve', methods=['POST'])
 @cross_origin("*") 
 def upload_file():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
-    data = request.form['dznfile']
-    if data != '':
+    try:
+        data = request.form['dznfile']
         with open(os.path.join(target,'data.dzn'),'w') as dznfile : dznfile.write(data)
         command = "./minizinc/bin/minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno.mzn') + " " + os.path.join(target, 'data.dzn') + '>' + os.path.join(target, 'result.txt')
         result = subprocess.Popen(command, shell=True)
@@ -30,7 +30,9 @@ def upload_file():
         f = open(os.path.join(target, 'result.txt'))
         result = f.read()
         return result
-    return "El archivo no es válido"
+    except error:
+        print(error)
+        return "El archivo no es válido"
 
 @app.route('/', methods=['GET'])
 @cross_origin("*") 

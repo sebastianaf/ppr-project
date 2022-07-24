@@ -85,6 +85,7 @@ const Compute = (props) => {
                   focus:ring-cyan-500 duration-500 cursor-pointer disabled:hover:bg-slate-100 disabled:bg-slate-100 disabled:text-black"
                   disabled={loading}
                   onClick={async () => {
+                    console.log(params);
                     if (params !== "") {
                       try {
                         setLoading(true);
