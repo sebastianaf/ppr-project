@@ -26,10 +26,10 @@ def upload_file():
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
         result = f.read()
-        resp = flask.Response(result)
+        resp = Flask.Response(result)
         resp.headers['Access-Control-Allow-Origin'] = '*'
         return resp
-    resp = flask.Response("Archivo vacio")
+    resp = Flask.Response("Archivo vacio")
     resp.headers['Access-Control-Allow-Origin'] = '*'
     return resp        
 
