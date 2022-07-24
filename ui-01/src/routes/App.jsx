@@ -11,7 +11,7 @@ import { setUser } from "../actions";
 import Spinner from "../components/Spinner";
 
 const Login = React.lazy(() => import("../pages/Login"));
-const Dashboard = React.lazy(() => import("../pages/Dashboard"));
+const Calcular = React.lazy(() => import("../pages/Calcular"));
 const Page404 = React.lazy(() => import("../pages/Page404"));
 
 const App = (props) => {
@@ -38,10 +38,10 @@ const App = (props) => {
       >
         <Routes>
           <Route exact path={`/login`} element={<Login />} />
-          <Route exact path={`/dashboard`} element={<Dashboard />} />
+          <Route exact path={`/compute`} element={<Calcular />} />
 
           {/* Route corrections */}
-          <Route exact path={`/`} element={<Navigate to={`/dashboard`} />} />
+          <Route exact path={`/`} element={<Navigate to={`/compute`} />} />
           <Route path={`*`} element={<Page404 />} />
         </Routes>
       </Suspense>

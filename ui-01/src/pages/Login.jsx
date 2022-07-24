@@ -24,7 +24,7 @@ const Login = (props) => {
   /**
    * 1. Check if the fields are empty
    * 2. If the fields aren't empty fetch the token
-   * 3. If the API response is OK then navigate to dashboard
+   * 3. If the API response is OK then navigate to the page
    */
   const login = async () => {
     try {
@@ -143,7 +143,7 @@ const Login = (props) => {
       </div>
     </div>
   ) : (
-    <Navigate to={`/dashboard`} />
+    <Navigate to={`/compute`} />
   );
 };
 

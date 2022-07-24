@@ -1,15 +1,15 @@
 import React from "react";
 import DefaultLayout from "../layout/DefaultLayout";
 import ProtectedRoute from "../routes/ProtectedRoute";
-import DashboardLayout from "../layout/DashboardLayout";
+import ComputeLayout from "../layout/ComputeLayout";
 
-const Dashboard = () => {
+const Compute = () => {
   return (
     <ProtectedRoute>
       <DefaultLayout>
-        <DashboardLayout />
+        <ComputeLayout />
       </DefaultLayout>
     </ProtectedRoute>
   );
 };
-export default Dashboard;
+export default Compute;

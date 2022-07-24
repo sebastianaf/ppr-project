@@ -1,6 +1,6 @@
 import React from "react";
 
-const DasboardLayout = () => {
+const ComputeLayout = () => {
   return (
     <div className={`flex justify-center items-start w-full`}>
       <div className={`flex flex-row flex-wrap max-w-[1280px] w-full`}>
@@ -16,4 +16,4 @@ const DasboardLayout = () => {
   );
 };
 
-export default DasboardLayout;
+export default ComputeLayout;

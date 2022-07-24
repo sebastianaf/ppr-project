@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faPlay } from "@fortawesome/free-solid-svg-icons";
 
 import SidebarTitle from "../components/SidebarTitle";
 import SidebarItem from "../components/SidebarItem";
@@ -35,9 +35,9 @@ const Sidebar = (props) => {
         className={`grow p-2 bg-slate-700 text-slate-100 overflow-x-hidden overflow-y-auto`}
       >
         <ul className={`py-4 px-1`}>
-          <SidebarTitle data={{ title: `sections` }} />
+          <SidebarTitle data={{ title: `Secciones` }} />
           <SidebarItem
-            data={{ title: `Dashboard`, icon: faChartLine, to: `/dashboard` }}
+            data={{ title: `Calcular`, icon: faPlay, to: `/compute` }}
           />
         </ul>
       </div>
