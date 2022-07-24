@@ -1,4 +1,4 @@
-FROM python:latest
+FROM python:3.9
 COPY ["requirements.txt","/usr/uv/app/"]
 WORKDIR /usr/uv/app/
 RUN python -m pip install -r requirements.txt
