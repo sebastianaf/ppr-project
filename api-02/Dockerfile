@@ -1,8 +1,9 @@
 FROM python:3.9
-COPY [".","/usr/uv/app/"]
+COPY ["app.py","/usr/uv/app/"]
 WORKDIR /usr/uv/app/
 RUN python -m pip install flask && \
     python -m pip install -U flask-cors
+COPY [".","/usr/uv/app/"]
 RUN apt-get update &&\
 	apt-get -y install \
 		git \
