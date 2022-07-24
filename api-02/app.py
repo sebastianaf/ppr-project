@@ -9,7 +9,6 @@ import subprocess
 ALLOWED_EXTENSIONS = {'dzn'}
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
 
 def allowed_file(filename):
     return '.' in filename and \
