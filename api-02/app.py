@@ -9,12 +9,15 @@ import subprocess
 ALLOWED_EXTENSIONS = {'dzn'}
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/solve', methods=['POST'])
+@app.route('/solve', methods=['GET'])
+@cross_origin("*") 
 def upload_file():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
@@ -26,14 +29,11 @@ def upload_file():
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
         result = f.read()
-        resp = Flask.Response(result)
-        resp.headers['Access-Control-Allow-Origin'] = '*'
-        return resp
-    resp = Flask.Response("Archivo vacio")
-    resp.headers['Access-Control-Allow-Origin'] = '*'
-    return resp        
+        return result
+    return "El archivo no es válido"
 
 @app.route('/', methods=['GET'])
+@cross_origin("*") 
 def test():
     return "uv-ppr"
 
