@@ -19,24 +19,22 @@ def allowed_file(filename):
 @app.route('/solve', methods=['POST'])
 @cross_origin()
 def upload_file():
-    models = ['Desenfreno.mzn']
     result = "" 
-    target = os.path.join(getcwd(), 'upload') 
+    target = os.path.join(getcwd(), 'uploads') 
     data = request.form['dznfile']
     if data != '':
-        model = models[0]
-        with open(os.path.join(target,'Datos.dzn'),'w') as dznfile : dznfile.write(data)
-        command = "minizinc --solver COIN-BC " + os.path.join(getcwd(),'minizinc', model) + " " + os.path.join(target, 'Datos.dzn') + '>' + os.path.join(target, 'output.txt')
+        with open(os.path.join(target,'data.dzn'),'w') as dznfile : dznfile.write(data)
+        command = "minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno.mzn') + " " + os.path.join(target, 'data.dzn') + '>' + os.path.join(target, 'result.txt')
         result = subprocess.Popen(command, shell=True)
         result.wait()
-        f = open(os.path.join(target, 'output.txt'))
+        f = open(os.path.join(target, 'result.txt'))
         result = f.read()
         return result
-    return "archivo invalido"
+    return "El archivo no es válido"
 
 @app.route('/', methods=['GET'])
-def hi():
-    return "hello pyzinc"
+def test():
+    return "uv-ppr"
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
