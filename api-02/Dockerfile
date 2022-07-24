@@ -9,11 +9,10 @@ RUN apt-get update &&\
 		wget \
 		libgl1 && \
 	rm -rf /var/lib/apt/lists/* && \
-	mkdir /tool && \
-	cd /tool && \
 	wget https://github.com/MiniZinc/MiniZincIDE/releases/download/2.6.4/MiniZincIDE-2.6.4-bundle-linux-x86_64.tgz && \
 	tar -zxvf MiniZincIDE-2.6.4-bundle-linux-x86_64.tgz && \
-	mv MiniZincIDE-2.6.4-bundle-linux MiniZincIDE && \
+    ls -la && \
+	mv MiniZincIDE-2.6.4-bundle-linux-x86_64 minizinc && \
 	rm -rf MiniZincIDE-2.6.4-bundle-linux-x86_64.tgz
 EXPOSE 5000
 CMD ["app.py"]
