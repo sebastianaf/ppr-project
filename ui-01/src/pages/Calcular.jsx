@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 import DefaultLayout from "../layout/DefaultLayout";
 import ProtectedRoute from "../routes/ProtectedRoute";
@@ -17,6 +18,7 @@ import { setModalOpen, setModalOptions } from "../actions";
 const Compute = (props) => {
   const { setModalOpen, setModalOptions } = props;
   const [params, setParams] = useState("");
+  const [sol, setSol] = useState("");
   const [calc, setCalc] = useState(false);
   const [loading, setLoading] = useState(false);
   return (
@@ -51,8 +53,9 @@ const Compute = (props) => {
                 <textarea
                   id="message"
                   rows="4"
-                  className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
+                  className={`min-h-[400px] block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
                   readOnly
+                  defaultValue={sol}
                 ></textarea>
               </Transition>
             </div>
@@ -90,18 +93,21 @@ const Compute = (props) => {
                       try {
                         setLoading(true);
                         //fetch
-                        const req = {
-                          headers: {
-                            "content-type": "application/json",
-                            charset: "utf-8",
-                          },
-                          body: JSON.stringify({ data: params }),
+                        var data = new FormData();
+                        data.append("dznfile", params);
+
+                        const res1 = await axios({
+                          url: `${api2.host}/solve`,
                           method: "POST",
-                        };
-                        const res1 = await fetch(`${api2.host}/solve`, req);
-                        const res2 = await res1.json();
-                        //console.log(res2);
-                        setParams(res2);
+                          data,
+                          params: { model: 0 },
+                          config: {
+                            headers: { "Content-Type": "multipart/form-data" },
+                          },
+                        });
+                        console.log(res1.data);
+
+                        setSol(res1.data);
                         setLoading(false);
                         setCalc(true);
                       } catch (error) {
