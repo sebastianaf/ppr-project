@@ -92,7 +92,8 @@ const Compute = (props) => {
                         //fetch
                         const req = {
                           headers: {
-                            "content-Type": "multipart/form-data",
+                            "content-type": "application/json",
+                            charset: "utf-8",
                           },
                           body: JSON.stringify({ data: params }),
                           method: "POST",
