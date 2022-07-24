@@ -64,6 +64,7 @@ services:
     environment:
       REACT_APP_UI_PORT: ${REACT_APP_UI_PORT}
       REACT_APP_API_HOST: ${REACT_APP_API_HOST}
+      REACT_APP_API2_HOST: ${REACT_APP_API2_HOST}
     build:
       context: ./ui-01
       dockerfile: Dockerfile

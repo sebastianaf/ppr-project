@@ -7,7 +7,7 @@ const Footer = (props) => {
   const { app } = props;
   return (
     <div
-      className={`w-full h-{50px} slate-100 flex justify-between border bg-slate-200 p-1`}
+      className={`w-full h-{50px} slate-100 flex justify-between border bg-slate-200 p-1 overflow-hidden`}
     >
       <div className={`relative left-0 font-extralight select-none ml-1`}>
         {app.name}
