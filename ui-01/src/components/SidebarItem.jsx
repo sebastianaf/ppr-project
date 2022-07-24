@@ -19,7 +19,7 @@ const SidebarItem = (props) => {
         <div
           className={`${
             !open && `hidden`
-          } overflow-hidden select-none duration-500`}
+          } overflow-hidden select-none duration-500 font-extralight`}
         >
           {data.title}
         </div>

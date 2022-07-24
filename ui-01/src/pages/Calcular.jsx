@@ -51,7 +51,7 @@ const Compute = (props) => {
                 <textarea
                   id="message"
                   rows="4"
-                  class={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
+                  className={`block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
                   readOnly
                 ></textarea>
               </Transition>
@@ -59,7 +59,7 @@ const Compute = (props) => {
             <div className="flex justify-between items-center py-2 px-3 border-t ">
               <input
                 type="file"
-                class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-100 file:text-black hover:file:bg-slate-200"
+                className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-slate-100 file:text-black hover:file:bg-slate-200"
                 name="parametros"
                 key={1}
                 onChange={(e) => {
