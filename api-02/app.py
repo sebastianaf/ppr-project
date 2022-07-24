@@ -24,7 +24,7 @@ def upload_file():
     data = request.form['dznfile']
     if data != '':
         with open(os.path.join(target,'data.dzn'),'w') as dznfile : dznfile.write(data)
-        command = "minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno.mzn') + " " + os.path.join(target, 'data.dzn') + '>' + os.path.join(target, 'result.txt')
+        command = "./minizinc/bin/minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno.mzn') + " " + os.path.join(target, 'data.dzn') + '>' + os.path.join(target, 'result.txt')
         result = subprocess.Popen(command, shell=True)
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
