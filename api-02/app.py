@@ -9,7 +9,6 @@ import subprocess
 ALLOWED_EXTENSIONS = {'dzn'}
 
 app = Flask(__name__)
-cors = CORS(app, origins=["https://localhost:3000","https://ppr.enerfris.com"])
 app.config['CORS_HEADERS'] = 'Content-Type'
 
 def allowed_file(filename):
