@@ -18,7 +18,7 @@ Un estudio de grabación desea optimizar el tiempo que contrata a un grupo de ac
 
 A continuación se describen los elementos que componen el problema según el paradigma de programación por restricciones.
 
-\subsubsection{Parámetros}
+\subsection{Parámetros}
 \begin{itemize}
     \item $ACTORES$: Son los nombres de los actores de la telenovela.
     \item $n\textunderscore actores$: Es la cantidad de actores de la telenovela $n(ACTORES)$, es decir, la cardinalidad de $ACTORES$.
@@ -27,29 +27,29 @@ A continuación se describen los elementos que componen el problema según el pa
     \item $Escenas$: Con $escena_{i,j} \in \{0,1\}$ cuando $j < n\textunderscore escenas + 1 $ donde  $1$ representa que el actor participa en la escena y $0$ no participa. $escena_{i,j}$ representa la participación del $i-esimo$ actor con $i \in [1..n\textunderscore actores]$ para la $j-esima$ escena con $j \in [1..n\textunderscore escenas + 1]$ donde el valor $escena_{i,n\textunderscore escenas + 1}$ corresponde al precio que cobra el actor $i$ por unidad de tiempo.
 \end{itemize}
 
- \subsubsection{Variables}
+\subsection{Variables}
 \begin{itemize}
     \item $costo\textunderscore total$: Esta variable representa el costo mínimo que debería tener la grabación de la telenovela.
     \item $orden\textunderscore escenas$: Representa el orden que deben tener las escenas de la telenovela para para minimizar el $costo\textunderscore total$. Es una lista de las escenas donde $orden\textunderscore escenas_i \in [1..n\textunderscore escenas]$ con $i \in [1..n\textunderscore escenas]$ son cada una de las posiciones en orden cronológico de las escenas.
     \item $Escenas\textunderscore$: De manera similar que $Escenas$, $Escenas\textunderscore$ es la información de la participación de los actores en las escenas ordenada con respecto a $orden\textunderscore escenas$. Esta variable se crea con el fin de mostrar una mejor representación de la solución de un problema.
-    \item $primera\textunderscore escena(actor)$: Es la primera escena en la que participa un $actor \in [1..n\textunderscore actores]$ con base al nuevo orden de las escenas dado por $Escenas\textunderscore$.
-    \item $ultima\textunderscore escena(actor)$: Es la primera escena en la que participa un $actor \in [1..n\textunderscore actores]$ con base al nuevo orden de las escenas dado por $Escenas\textunderscore$.
-    \item $costo\textunderscore x\textunderscore actor = \forall i\sum_{j=1}^{n\textunderscore escenas} Duracion[orden\textunderscore escenas_j] * Escenas_{i,n\textunderscore escenas+1}$\newline
-    donde $primera\textunderscore escena(i) \leq i \leq ultima\textunderscore escena(i)$\newline
-    Esta variable se representa como el valor que cobrará cada actor con base a al $orden\textunderscore escenas$ que minimice su el $costo\textunderscore total$. 
-    
-
-    
-    \item $CostoTotal = [\sum_{i=1}^{n\textunderscore actores} costo_i * \sum_{j=1}^{n\textunderscore escenas}duraciones_j * participacion_{ij} ]   > 0$. \newline\newline
-          Es el costo total de grabar la telenovela definido como las sumas de los productos del costo de cada actor con la suma de las duraciones de sus ensayos/grabaciones.
+    \item $costo\textunderscore x\textunderscore actor$: Este es el valor que cobrará cada $actor \in [1..n\textunderscore actores]$ con base al $orden\textunderscore escenas$ que minimice el $costo\textunderscore total$.
 \end{itemize}
 
-\subsubsection{Restricciones}
+\subsection{Funciones}
+\begin{itemize}
+    \item $primera\textunderscore escena(actor)$: Es la primera escena en la que participa un $actor \in [1..n\textunderscore actores]$ con base al nuevo orden de las escenas dado por $Escenas\textunderscore$.
+    \item $ultima\textunderscore escena(actor)$: Es la primera escena en la que participa un $actor \in [1..n\textunderscore actores]$ con base al nuevo orden de las escenas dado por $Escenas\textunderscore$.
+\end{itemize}
 
+\subsection{Restricciones}
+\begin{itemize}
+    \item $costo\textunderscore x\textunderscore actor = \forall i\sum_{j=1}^{n\textunderscore escenas} Duracion[orden\textunderscore escenas_j] * Escenas_{i,n\textunderscore escenas+1}$\newline
+          donde $primera\textunderscore escena(i) \leq i \leq ultima\textunderscore escena(i)$
+\end{itemize}
 
-\subsubsection{Función objetivo}
+\subsection{Función objetivo}
 
-\subsubsection{Extras}
+\subsection{Extras}
 Listar el máximo ahorro posible a partir de la diferencia entre el costo total máximo y el costo total mínimo.
 
 \section{Modelo extendido}

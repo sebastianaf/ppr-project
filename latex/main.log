@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.3)  25 JUL 2022 16:21
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.3)  25 JUL 2022 18:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -881,7 +881,7 @@ LaTeX Info: Redefining \nameref on input line 14.
 \openout5 = `main.out'.
 
  (titlepage.tex
-<img/universidadDelValle.png, id=34, 421.575pt x 602.25pt>
+<img/universidadDelValle.png, id=38, 421.575pt x 602.25pt>
 File: img/universidadDelValle.png Graphic file (type png)
 <use img/universidadDelValle.png>
 Package pdftex.def Info: img/universidadDelValle.png  used on input line 5.
@@ -900,10 +900,6 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 21.
 
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 24.
@@ -960,51 +956,49 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 36.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 36.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 36.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 40.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 40.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 40.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 41.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 41.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 41.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 38.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 46.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 38.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 46.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 39.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 46.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 39.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 46.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 43.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 46.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 43.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 47.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-
- []
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 47.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -1021,20 +1015,20 @@ LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 32762337DEF5C9A2860BE3260F2E5335;869.
+(rerunfilecheck)             Checksum: E19742591D4A448FE5B8BDCE90757387;906.
  ) 
 Here is how much of TeX's memory you used:
  31716 strings out of 478584
- 619831 string characters out of 2854217
- 921151 words of memory out of 3000000
- 49386 multiletter control sequences out of 15000+600000
- 472184 words of font info for 40 fonts, out of 8000000 for 9000
+ 619789 string characters out of 2854217
+ 920148 words of memory out of 3000000
+ 49385 multiletter control sequences out of 15000+600000
+ 472789 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,5n,94p,554b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (3 pages, 134691 bytes).
+Output written on main.pdf (3 pages, 133890 bytes).
 PDF statistics:
- 95 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 74 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 99 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 

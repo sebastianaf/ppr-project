@@ -42,10 +42,11 @@ function var int:
     arg_max(reverse(Escenas_[actor,1..n_escenas]))+1;
 
 %costo por actor 
-constraint forall( i in 1..n_actores )
-  (sum(j in 1.. n_escenas where  j >= primera_escena(i)  /\  j <= ultima_escena(i))
-    (Duracion[orden_escenas[j]] ) * 
-    Escenas[i,n_escenas+1] = costo_x_actor[i]);
+constraint forall( i in 1..n_actores )(
+  sum(j in 1.. n_escenas where  
+    j >= primera_escena(i)  /\  j <= ultima_escena(i))(
+      Duracion[orden_escenas[j]] ) * 
+      Escenas[i,n_escenas+1] = costo_x_actor[i]);
 
 %costo por actor continuacion
 %constraint forall( i in 1..n_actores )(
