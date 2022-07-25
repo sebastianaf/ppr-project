@@ -20,16 +20,26 @@ A continuación se describen los elementos que componen el problema según el pa
 
 \subsubsection{Parámetros}
 \begin{itemize}
-    \item $ACTORES$: Los nombres de los actores de la telenovela.
-    \item $n\textunderscore actores$: Cantidad de actores de la telenovela $n(ACTORES)$ referenciando la cardinalidad de $ACTORES$.
-    \item $Duracion$: Las duraciones de las escenas de la telenovela en unidades de tiempo.
-    \item $n\textunderscore escenas$: La cantidad de escenas de la telenovela $n(Duracion)$ referenciando la cardinalidad de $Duracion$.
-    \item $Escenas$: Con $escena_{ij} \in \{0,1\}$ la participación del $i-esimo$ actor con $i \in [1..n\textunderscore actores]$ para la $j-esima$ escena con $j \in [1..n\textunderscore escenas]$ donde $1$ representa que el actor participa en la escena y $0$ no participa.    
+    \item $ACTORES$: Son los nombres de los actores de la telenovela.
+    \item $n\textunderscore actores$: Es la cantidad de actores de la telenovela $n(ACTORES)$, es decir, la cardinalidad de $ACTORES$.
+    \item $Duracion$: Son las duraciones de las escenas de la telenovela en unidades de tiempo.
+    \item $n\textunderscore escenas$: Son la cantidad de escenas de la telenovela $n(Duracion)$, es decir, la cardinalidad de $Duracion$.
+    \item $Escenas$: Con $escena_{i,j} \in \{0,1\}$ cuando $j < n\textunderscore escenas + 1 $ donde  $1$ representa que el actor participa en la escena y $0$ no participa. $escena_{i,j}$ representa la participación del $i-esimo$ actor con $i \in [1..n\textunderscore actores]$ para la $j-esima$ escena con $j \in [1..n\textunderscore escenas + 1]$ donde el valor $escena_{i,n\textunderscore escenas + 1}$ corresponde al precio que cobra el actor $i$ por unidad de tiempo.
 \end{itemize}
 
-\subsubsection{Variables}
+ \subsubsection{Variables}
 \begin{itemize}
-    \item $Orden$: Es una lista de las escenas donde $orden_i \in [1..n\textunderscore escenas]$ con $i \in [1..n\textunderscore escenas]$ son cada una de las posiciones en orden cronológico de las escenas.
+    \item $costo\textunderscore total$: Esta variable representa el costo mínimo que debería tener la grabación de la telenovela.
+    \item $orden\textunderscore escenas$: Representa el orden que deben tener las escenas de la telenovela para para minimizar el $costo\textunderscore total$. Es una lista de las escenas donde $orden\textunderscore escenas_i \in [1..n\textunderscore escenas]$ con $i \in [1..n\textunderscore escenas]$ son cada una de las posiciones en orden cronológico de las escenas.
+    \item $Escenas\textunderscore$: De manera similar que $Escenas$, $Escenas\textunderscore$ es la información de la participación de los actores en las escenas ordenada con respecto a $orden\textunderscore escenas$. Esta variable se crea con el fin de mostrar una mejor representación de la solución de un problema.
+    \item $primera\textunderscore escena(actor)$: Es la primera escena en la que participa un $actor \in [1..n\textunderscore actores]$ con base al nuevo orden de las escenas dado por $Escenas\textunderscore$.
+    \item $ultima\textunderscore escena(actor)$: Es la primera escena en la que participa un $actor \in [1..n\textunderscore actores]$ con base al nuevo orden de las escenas dado por $Escenas\textunderscore$.
+    \item $costo\textunderscore x\textunderscore actor = \forall i\sum_{j=1}^{n\textunderscore escenas} Duracion[orden\textunderscore escenas_j] * Escenas_{i,n\textunderscore escenas+1}$\newline
+    donde $primera\textunderscore escena(i) \leq i \leq ultima\textunderscore escena(i)$\newline
+    Esta variable se representa como el valor que cobrará cada actor con base a al $orden\textunderscore escenas$ que minimice su el $costo\textunderscore total$. 
+    
+
+    
     \item $CostoTotal = [\sum_{i=1}^{n\textunderscore actores} costo_i * \sum_{j=1}^{n\textunderscore escenas}duraciones_j * participacion_{ij} ]   > 0$. \newline\newline
           Es el costo total de grabar la telenovela definido como las sumas de los productos del costo de cada actor con la suma de las duraciones de sus ensayos/grabaciones.
 \end{itemize}
@@ -41,5 +51,9 @@ A continuación se describen los elementos que componen el problema según el pa
 
 \subsubsection{Extras}
 Listar el máximo ahorro posible a partir de la diferencia entre el costo total máximo y el costo total mínimo.
+
+\section{Modelo extendido}
+A continuación se describe el contenido del modelo extendido. \newline
+
 
 \end{document}

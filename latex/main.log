@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.3)  22 JUL 2022 12:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2022.3.3)  25 JUL 2022 16:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -889,34 +889,54 @@ Package pdftex.def Info: img/universidadDelValle.png  used on input line 5.
  [1
 
 {C:/Users/sebas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./img/universidadDelValle.png>])
-LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 18.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
  (C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
  []
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 25.
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 21.
 
 
-Overfull \hbox (20.28899pt too wide) in paragraph at lines 25--26
-[]$\OML/cmm/m/it/10 n[]actores$\OT1/cmr/m/n/10 : Can-ti-dad de ac-to-res de la te-le-no-ve-la $\OML/cmm/m/it/10 n\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ACTORES\OT1/cmr/m/n/10 )$ re-fe-ren-cian-do la car-di-na-li-dad de $\OML/cmm/m/it/10 ACTORES$\OT1/cmr/m/n/10 . 
- []
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 24.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 26.
 
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 27.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 28.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 27.
 
 
-LaTeX Warning: Command \textunderscore invalid in math mode on input line 28.
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 27.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 27.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 33.
 
 
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 33.
@@ -928,7 +948,61 @@ LaTeX Warning: Command \textunderscore invalid in math mode on input line 34.
 LaTeX Warning: Command \textunderscore invalid in math mode on input line 34.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--36
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 34.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 35.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 36.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 38.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 38.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 39.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 39.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 43.
+
+
+LaTeX Warning: Command \textunderscore invalid in math mode on input line 43.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--45
 
  []
 
@@ -936,26 +1010,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--36
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 \end{document}
-                    [1] (main.aux
+l.55 \section
+             {Modelo extendido} [1]
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+[2] (main.aux
 LaTeX Info: Redefining \. on input line 26.
 LaTeX Info: Redefining \% on input line 26.
 )
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B73D6877E7BC8490C986AC4706E35225;883.
+(rerunfilecheck)             Checksum: 32762337DEF5C9A2860BE3260F2E5335;869.
  ) 
 Here is how much of TeX's memory you used:
- 31713 strings out of 478584
- 619813 string characters out of 2854217
- 916161 words of memory out of 3000000
- 49384 multiletter control sequences out of 15000+600000
- 472789 words of font info for 42 fonts, out of 8000000 for 9000
+ 31716 strings out of 478584
+ 619831 string characters out of 2854217
+ 921151 words of memory out of 3000000
+ 49386 multiletter control sequences out of 15000+600000
+ 472184 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,5n,94p,554b,814s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (2 pages, 130360 bytes).
+Output written on main.pdf (3 pages, 134691 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 9 named destinations out of 1000 (max. 500000)
+ 95 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
  74 words of extra memory for PDF output out of 10000 (max. 10000000)
 
