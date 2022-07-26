@@ -5,7 +5,7 @@ enum ACTORES;
 int: n_actores = length(ACTORES);
 array[int] of int: Duracion;
 int: n_escenas = length(Duracion);
-array[1..n_actores,1..n_escenas+1] of  int:    Escenas;  %arreglo de las escenas con los costos
+array[1..n_actores,1..n_escenas+1] of int: Escenas;  
 
 %Variables
 array[1..n_escenas] of var 1..n_escenas: orden_escenas;
@@ -57,27 +57,26 @@ constraint forall( i in 1..n_escenas )(
       Escenas[j,n_escenas+1])* Duracion[i] =
       costo_maximo_x_escena[i]);
       
-% indomain_min,indomain_median,indomain_random,indomain_split
-% input_order, first_fail,smallest,dom_w_deg
+%indomain_min,indomain_median,indomain_random,indomain_split
+%input_order, first_fail,smallest,dom_w_deg
 %solve :: int_search(orden_escenas, first_fail, indomain_min)  minimize costo_total;
 
 solve :: int_search(orden_escenas, dom_w_deg, indomain_min)  minimize costo_total;
-
-
-%solve minimize f;
-%solve maximize f;
-%show(n_escenas) , show(n_actores), "\n"  , show( Escenas[8,1..n_escenas]),"\n primero:",  show( arg_max(Escenas[8,1..n_escenas])) , " ultimo: ", show( length(Escenas[8,1..n_escenas]) - arg_max(  reverse(Escenas[8,1..n_escenas])) +1 )   ,
  
-output [ "costo por actor: "  , show( costo_x_actor), "\norden escenas: " , show(orden_escenas)  ,"\ncosto por escena: " , show(costo_x_escena),
- "\n" ,"Costo total: ", show(costo_total) , "\n" ,"Costo minimo posible: ", show(costo_total) , "\n" ,"Costo maximo posible: ", show(costo_maximo) ,"\n",
-  show( Escenas_[2,1..n_escenas]),"\n primero:",  show( arg_max(Escenas_[2,1..n_escenas])) , " ultimo: ", show( length(Escenas_[2,1..n_escenas]) - arg_max(  reverse(Escenas_[2,1..n_escenas])) +1 ) ,"\n"  %, "\n cantidad escenas por actor: " , show(cant_escenas_x_actor)
+output [ 
+  "Costos por actor (1x10^5 $): \t\t\(costo_x_actor)\n" ++
+  "Costo por escena (1x10^5 $): \t\t\(costo_x_escena)\n"++
+  "Costo total: (1x10^5 $) \t\t\t\(costo_total)\n"++
+  "Costo maximo(teoríco) (1x10^5 $): \t\(costo_maximo)\n\n"++
+  
+  "Orden de las escenas: \t\t\t\(orden_escenas)\n"++
+  "Costo minimo posible (1x10^5 $): \t\(costo_total)\n"
+] ;
 
-   ] ;
-%n_escenas
 
 output [ "\n ESCENAS \n"];
 output [ show_int(1,orden_escenas[i])++" " |i in 1..n_escenas ] ++[ "\n"];
-output  [ show_int(1,Escenas_[i,j]) ++ " " ++ 
+output [ show_int(1,Escenas_[i,j]) ++ " " ++ 
          if j == n_escenas then
              if i != n_escenas then 
                  "\n" endif 
