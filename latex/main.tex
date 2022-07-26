@@ -20,19 +20,22 @@ A continuación se describen los elementos que componen el problema según el pa
 
 \subsection{Parámetros}
 \begin{itemize}
-    \item $ACTORES$: Son los nombres de los actores de la telenovela.
-    \item $n\textunderscore actores$: Es la cantidad de actores de la telenovela $n(ACTORES)$, es decir, la cardinalidad de $ACTORES$.
-    \item $Duracion$: Son las duraciones de las escenas de la telenovela en unidades de tiempo.
-    \item $n\textunderscore escenas$: Son la cantidad de escenas de la telenovela $n(Duracion)$, es decir, la cardinalidad de $Duracion$.
-    \item $Escenas$: Con $escena_{i,j} \in \{0,1\}$ cuando $j < n\textunderscore escenas + 1 $ donde  $1$ representa que el actor participa en la escena y $0$ no participa. $escena_{i,j}$ representa la participación del $i-esimo$ actor con $i \in [1..n\textunderscore actores]$ para la $j-esima$ escena con $j \in [1..n\textunderscore escenas + 1]$ donde el valor $escena_{i,n\textunderscore escenas + 1}$ corresponde al precio que cobra el actor $i$ por unidad de tiempo.
+    \item $ACTORES$: Es el conjunto de los nombres de los actores de la telenovela.
+    \item $n\textunderscore actores \in \mathbb{N}$: Es la cantidad de actores de la telenovela $n(ACTORES)$, es decir, la cardinalidad de $ACTORES$.
+    \item $Duracion$: Es el conjunto de las duraciones de las escenas de la telenovela en unidades de tiempo con $Duracion_i \in \mathbb{N}$ donde $i \in [1..n\textunderscore escenas]$.
+    \item $n\textunderscore escenas \in \mathbb{N}$: Es la cantidad de escenas de la telenovela $n(Duracion)$, es decir, la cardinalidad de $Duracion$.
+    \item $Escenas$: Es la participación que tienen los actores en las escenas con $escena_{i,j} \in \{0,1\}$ cuando $j < n\textunderscore escenas + 1 $ donde  $1$ representa que el actor participa en la escena y $0$ no participa. $escena_{i,j}$ representa la participación del $i-esimo$ actor con $i \in [1..n\textunderscore actores]$ para la $j-esima$ escena con $j \in [1..n\textunderscore escenas + 1]$ donde el valor $escena_{i,n\textunderscore escenas + 1}$ corresponde al precio que cobra el actor $i$ por unidad de tiempo.
 \end{itemize}
 
 \subsection{Variables}
 \begin{itemize}
-    \item $costo\textunderscore total$: Esta variable representa el costo mínimo que debería tener la grabación de la telenovela.
-    \item $orden\textunderscore escenas$: Representa el orden que deben tener las escenas de la telenovela para para minimizar el $costo\textunderscore total$. Es una lista de las escenas donde $orden\textunderscore escenas_i \in [1..n\textunderscore escenas]$ con $i \in [1..n\textunderscore escenas]$ son cada una de las posiciones en orden cronológico de las escenas.
-    \item $Escenas\textunderscore$: De manera similar que $Escenas$, $Escenas\textunderscore$ es la información de la participación de los actores en las escenas ordenada con respecto a $orden\textunderscore escenas$. Esta variable se crea con el fin de mostrar una mejor representación de la solución de un problema.
-    \item $costo\textunderscore x\textunderscore actor$: Este es el valor que cobrará cada $actor \in [1..n\textunderscore actores]$ con base al $orden\textunderscore escenas$ que minimice el $costo\textunderscore total$.
+    \item $orden\textunderscore escenas$: Representa el orden que deben tener las escenas de la telenovela para para minimizar el $costo\textunderscore total$. Es el conjunto de las escenas donde $orden\textunderscore escenas_i \in [1..n\textunderscore escenas]$ con $i \in [1..n\textunderscore escenas]$ son cada una de las posiciones en orden cronológico de las escenas.
+    \item $Escenas\textunderscore$: De manera similar que $Escenas$, $Escenas\textunderscore$ es la información de la participación de los actores en las escenas donde $escena\textunderscore_{i,j} \in \{0,1\}$ representa la participación del $i-esimo$ actor con $i \in [1..n\textunderscore actores]$ para la $j-esima$ escena con $j \in [1..n\textunderscore escenas + 1]$ donde  $1$ representa que el actor participa en la escena y $0$ no participa. $Escenas\textunderscore$ se ordenará con respecto a $orden\textunderscore escenas$. Esta variable se crea con el fin de mostrar la matriz solución y así dar una mejor representación de la solución de un problema.
+    \item $costo\textunderscore x\textunderscore actor$: Son los valores que cobrarán cada uno de los actores con $costo\textunderscore x\textunderscore actor_i \in \mathbb{N}$ donde $ i \in [1..n\textunderscore actores]$ con base al $orden\textunderscore escenas$ que minimice el $costo\textunderscore total$.
+    \item $costo\textunderscore total \in \mathbb{N}$: Esta variable representa el costo total mínimo que debería tener la grabación de la telenovela.
+    \item $costo\textunderscore x\textunderscore escena$: Son los valores que costarán cada una de las escenas con $costo\textunderscore x\textunderscore escena_i > 0$ donde $i \in [1..n\textunderscore escenas]$ con base al $orden\textunderscore escenas$ que minimice el $costo\textunderscore total$.
+    \item $costo\textunderscore maximo\textunderscore x\textunderscore escena$: Es el conjunto de los valores que en teoría costarían cada una de las escenas si todos los actores tuvieran participación, $costo\textunderscore maximo\textunderscore x\textunderscore escena_i \in \mathbb{N}$ con $i \in [1..n\textunderscore escenas]$ es el costo máximo teórico de la escena $i$, esta variable se crea con el fin de mostrar el cálculo de la variable $costo\textunderscore maximo$.
+    \item $costo\textunderscore maximo \in \mathbb{N}$: Esta variable representa el costo máximo que suman el total de los valores de $costo\textunderscore maximo\textunderscore x\textunderscore escena$.
 \end{itemize}
 
 \subsection{Funciones}
@@ -43,14 +46,21 @@ A continuación se describen los elementos que componen el problema según el pa
 
 \subsection{Restricciones}
 \begin{itemize}
-    \item $costo\textunderscore x\textunderscore actor = \forall i\sum_{j=1}^{n\textunderscore escenas} Duracion[orden\textunderscore escenas_j] * Escenas_{i,n\textunderscore escenas+1}$\newline
-          donde $primera\textunderscore escena(i) \leq i \leq ultima\textunderscore escena(i)$
+    \item $\forall i \nexists j$ tal que $i = j$ \newline donde $i \land j \in orden\textunderscore escenas$
+    \item $\forall i 1 \leq orden\textunderscore escenas_i \leq n\textunderscore escenas$  donde $i \in orden\textunderscore escenas$.
+    \item $\forall i \forall j$  $Escenas\textunderscore_{i,j} = Escenas[i,orden\textunderscore escenas_{j}]$ \newline donde $i \in [1..n\textunderscore actores] \land j \in [1..n\textunderscore escenas]$.
+    \item $\forall i\sum_{j=primera\textunderscore escena(i)}^{ultima\textunderscore escena(i)}$  $Duracion[orden\textunderscore escenas_j] * Escenas_{i,n\textunderscore escenas+1} = costo\textunderscore x\textunderscore actor$\newline
+          donde $i \in [1..n\textunderscore actores]$.
+    \item $\forall i [\sum_{j=1}^{n\textunderscore actores}$  $Escenas\textunderscore[j,orden\textunderscore escenas_i] * Escenas{j,n\textunderscore escenas+1}]*Duracion[orden\textunderscore escenas_i] = costo\textunderscore x\textunderscore escena$\newline
+          donde $i \in [1..n\textunderscore escenas]$.
+    \item $\forall i [\sum_{j=1}^{n\textunderscore actores}$  $Escenas[j,n\textunderscore escenas+1]] * Duracion_i = costo\textunderscore maximo\textunderscore x\textunderscore escena$\newline
+          donde $i \in [1..n\textunderscore escenas]$.
 \end{itemize}
 
 \subsection{Función objetivo}
-
-\subsection{Extras}
-Listar el máximo ahorro posible a partir de la diferencia entre el costo total máximo y el costo total mínimo.
+\begin{itemize}
+    \item $min(\sum_{i=1}^{n\textunderscore actores}costo\textunderscore x\textunderscore actor$)
+\end{itemize}
 
 \section{Modelo extendido}
 A continuación se describe el contenido del modelo extendido. \newline

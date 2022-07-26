@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1658791968 "c:/Users/sebas/Escritorio/code/PPR-project/latex/main.tex" "main.pdf" "main" 1658791977
+["pdflatex"] 1658850119 "c:/Users/sebas/Escritorio/code/PPR-project/latex/main.tex" "main.pdf" "main" 1658850123
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -19,6 +19,7 @@
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1247596667 35752 024fb6c41858982481f6968b5fc26508 ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1247596667 32762 7fee39e011c23b3589931effd97b9702 ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Program Files/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Program Files/MiKTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Program Files/MiKTeX/tex/generic/babel/babel.sty" 1644737538 147385 92d9e28fe4fa3ddad85cb63fd2ce2840 ""
@@ -187,12 +188,12 @@
   "C:/Program Files/MiKTeX/tex/latex/xkeyval/xkeyval.sty" 1623005690 4902 efb3d66683a2da2a232f71e3a571a899 ""
   "C:/Users/sebas/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1646351497 83486 9208647d054da4672a050e7ed94c9aa5 ""
   "C:/Users/sebas/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1646351512 10236776 a924d1c5914dceac0c075a4215312575 ""
-  "c:/Users/sebas/Escritorio/code/PPR-project/latex/main.tex" 1658791967 4108 583b2c34ae13ba1d72e4a0c936125599 ""
+  "c:/Users/sebas/Escritorio/code/PPR-project/latex/main.tex" 1658850117 6903 3a5a23e37d753f35d039cc69ec3c70ae ""
   "design_ASC.sty" 1658625643 4522 b5f89252185c0f2ef7fd6a9ab1cf254a ""
   "img/universidadDelValle.png" 1658625643 24822 8976672a5a2e83dbe660940b5439f65a ""
-  "main.aux" 1658791976 1798 ef95b6fe983fb6445eb3810e0d709352 "pdflatex"
-  "main.out" 1658791976 906 e19742591d4a448fe5b8bdce90757387 "pdflatex"
-  "main.tex" 1658791967 4108 583b2c34ae13ba1d72e4a0c936125599 ""
+  "main.aux" 1658850123 1798 8b0d3e32b6db3d09bd9d4844054d8eb0 "pdflatex"
+  "main.out" 1658850123 906 e19742591d4a448fe5b8bdce90757387 "pdflatex"
+  "main.tex" 1658850117 6903 3a5a23e37d753f35d039cc69ec3c70ae ""
   "stata.sty" 1658625643 23235 0890917a1f8bae7a9f320308c074396f ""
   "titlepage.tex" 1658625643 865 7a180aa4f168697ae1a3bfe897940827 ""
   (generated)
