@@ -34,10 +34,11 @@ services:
     build:
       context: ./api-02
       dockerfile: Dockerfile
-    resources:
-      limits:
-        cpus: ${API2_MAX_CPUS}
-        memory: ${API2_MAX_RAM}
+    deploy:
+      resources:
+        limits:
+          cpus: ${API2_MAX_CPUS}
+          memory: ${API2_MAX_RAM}
     ports:
       - 9011:5000
     depends_on:
