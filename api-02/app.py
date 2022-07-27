@@ -44,7 +44,7 @@ def upload_file2():
         command = "./minizinc/bin/minizinc --solver Chuffed " + os.path.join(getcwd(),'models', 'Desenfreno2.mzn') + " " + os.path.join(target, 'data2.dzn') + '>' + os.path.join(target, 'result2.txt')
         result = subprocess.Popen(command, shell=True)
         result.wait()
-        f = open(os.path.join(target, 'result1.txt'))
+        f = open(os.path.join(target, 'result2.txt'))
         result = f.read()
         return result
     except :
