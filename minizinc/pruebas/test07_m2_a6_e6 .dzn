@@ -8,3 +8,14 @@ Escenas = [| 0,1,0,0,0,0,12
            | 0,1,0,1,0,0,8|]; 
            
 Duracion = [5,1,1,1,3,1];
+
+Disponibilidad =[|Actor1, 10
+                 |Actor2, 17
+                 |Actor3, 50
+                 |Actor4, 27
+                 |Actor5, 70
+                 |Actor6, 10|];
+
+Evitar =[|Actor1, Actor6
+         |Actor2, Actor5
+         |Actor4, Actor3|];

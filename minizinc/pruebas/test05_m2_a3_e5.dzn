@@ -5,3 +5,10 @@ Escenas = [| 1,0,0,0,0,4
            | 0,0,1,0,0,5|];
 
 Duracion = [5,3,4,1,2];
+
+Disponibilidad =[|Actor1, 3
+                 |Actor2, 0
+                 |Actor3, 10|];
+
+Evitar =[|Actor1, Actor2
+         |Actor2, Actor3|];
