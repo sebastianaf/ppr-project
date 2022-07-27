@@ -18,7 +18,7 @@ Un estudio de grabación desea optimizar el tiempo que contrata a un grupo de ac
 
 A continuación se describen los elementos que componen el problema según el paradigma de programación por restricciones.
 
-\subsection{Parámetros}
+\subsection{Parámetros de entrada}
 \begin{itemize}
     \item $ACTORES$: Es el conjunto de los nombres de los actores de la telenovela.
     \item $n\textunderscore actores \in \mathbb{N}$: Es la cantidad de actores de la telenovela $n(ACTORES)$, es decir, la cardinalidad de $ACTORES$.
@@ -68,9 +68,25 @@ A continuación se describe el contenido del modelo extendido. \newline
 \subsection{Parámetros de entrada}
 A las entradas del modelo básico se le adicionan los siguientes parámetros.
 \begin{itemize}
-    \item $Disponibilidad$: Este es un arreglo asociativo que contiene las restricciones de dispibilidad de algunos de los actores especificados en el conjunto de $Actores$. $Disponibilidad_{i} \in \mathbb{N} con i \in ACTORES$ representa la cantidad de horas máxima que el actor puede estár disponible para la grabación de la telenovela, $Disponibilidad_{i} = 0$ significa que el actor $i$ no tiene restricciones de tiempo.
-    \item 
+    \item $Disponibilidad$: Es la información de las restricciones de los actores especificados en el conjunto de $ACTORES$. $Disponibilidad_{i,j}$ con $i \in [1..n\textunderscore actores]$ y con $j \in [1..2]$ representa la cantidad de horas máxima que actor $i$ de nombre $Disponibilidad_{i,1} \in ACTORES$ puede estár disponible para la grabación de la telenovela con tiempo $Disponibilidad_{i,2} \in \mathbb{N} $. El caso en que la disponibilidad del actor $i$  $Disponibilidad_{i,2} = 0$ significa que no tiene restricciones de tiempo.
+    \item $Evitar:$ Es la información de las parejas de actores que no 
+    pueden estar (cualquiera que sea la razón) en la misma escena donde $Evitar_{i,j}$ con $i \in \mathbb{N}$ y con $j \in [1..2]$ representa la información de una pareja con $Evitar_{i,1} \in ACTORES$ los primeros actores y $Evitar_{i,2} \in ACTORES$ los segundos actores.
 \end{itemize}
 
+\subsection{Variables}
+A las variables del modelo básico se le agregan las siguientes:
+\begin{itemize}
+    \item $tiempo\textunderscore x\textunderscore actor$: Son los tiempos que debe permanecer cada actor en las escenas para grabar donde $tiempo\textunderscore  x\textunderscore actor_i \in \mathbb{N}$ con $i \in [1..n\textunderscore actores]$ es el tiempo con respecto al orden inicial de las escenas.
+    \item $tiempo\textunderscore min\textunderscore x\textunderscore actor$: Son los tiempos minimos que debe permanecer cada actor en las escenas para grabar donde $tiempo\textunderscore min\textunderscore x\textunderscore actor_i \in \mathbb{N}$ con $i \in [1..n\textunderscore actores]$ es el tiempo con respecto al $orden\textunderscore escenas$ que minimice el $costo\textunderscore total$.
+\end{itemize}
+
+\subsection{Restricciones}
+A las restricciones del modelo básico se le agregan las siguientes:
+\begin{itemize}
+    \item $\forall i\sum_{j=1}^{n\textunderscore escenas}$  $Duracion_j * Escenas_{i,j} = tiempo\textunderscore x\textunderscore actor$\newline
+          donde $i \in [1..n\textunderscore actores]$.
+    \item $\forall i\sum_{j=1}^{n\textunderscore escenas}$  $Duracion[orden\textunderscore escenas_j] * Escenas\textunderscore_{i,j} = tiempo\textunderscore min\textunderscore x\textunderscore actor$\newline
+          donde $i \in [1..n\textunderscore actores]$.
+\end{itemize}
 
 \end{document}

@@ -12,9 +12,6 @@ array[1..n_escenas] of var 1..n_escenas: orden_escenas;
 array[1..n_actores,1..n_escenas] of var 0..1: Escenas_;  
 array[1..n_actores] of var int: costo_x_actor;
 var int: costo_total = sum(costo_x_actor);
-array[1..n_escenas] of var int: costo_x_escena;
-array[1..n_escenas] of var int: costo_maximo_x_escena;
-var int: costo_maximo = sum(i in 1..n_escenas)(costo_maximo_x_escena[i]);
 
 %Funciones
 function var int: 
@@ -42,18 +39,7 @@ constraint forall( i in 1..n_actores )(
     j >= primera_escena(i)  /\  j <= ultima_escena(i))(
       Duracion[orden_escenas[j]] ) * 
       Escenas[i,n_escenas+1] = costo_x_actor[i]);
-      
-constraint forall( i in 1..n_escenas)(
-    sum(j in 1.. n_actores)(
-      Escenas_[j,orden_escenas[i]] *  
-      Escenas[j,n_escenas+1]) *
-      Duracion[orden_escenas[i]] = costo_x_escena[i]);
-
-constraint forall( i in 1..n_escenas )( 
-    sum(j in 1.. n_actores)( 
-      Escenas[j,n_escenas+1])* Duracion[i] =
-      costo_maximo_x_escena[i]);
-      
+         
 %indomain_min,indomain_median,indomain_random,indomain_split
 %input_order, first_fail,smallest,dom_w_deg
 %solve :: int_search(orden_escenas, first_fail, indomain_min)  minimize costo_total;
@@ -61,13 +47,11 @@ constraint forall( i in 1..n_escenas )(
 solve :: int_search(orden_escenas, dom_w_deg, indomain_min)  minimize costo_total;
  
 output [ 
-  "Costos por actor (1x10^5 $): \t\t\(costo_x_actor)\n" ++
-  "Costo por escena (1x10^5 $): \t\t\(costo_x_escena)\n"++
-  "Costo maximo(teoríco) (1x10^5 $): \t\(costo_maximo)\n\n"++
-  
-  "Orden de las escenas: \t\t\t\(orden_escenas)\n"++
-  "Costo minimo posible (1x10^5 $): \t\(costo_total)\n"
-] ;
+  "Costos mínimo por actor: \t\(costo_x_actor)\n" ++
+  "Costo minimo total: \t\t\(costo_total)\n\n"++
+
+  "Orden de las escenas: \t\t\(orden_escenas)\n"
+];
 
 output [ "\n ESCENAS \n"];
 output [ show_int(1,orden_escenas[i])++" " |i in 1..n_escenas ] ++[ "\n"];
