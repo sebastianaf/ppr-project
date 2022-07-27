@@ -30,7 +30,7 @@ const Compute = (props) => {
               <textarea
                 id="comment"
                 rows="4"
-                className="min-h-[400px] block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 "
+                className="min-h-[400px] block p-2.5 w-full text-3xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 "
                 placeholder="Parámetros..."
                 defaultValue={params}
               ></textarea>
@@ -53,7 +53,7 @@ const Compute = (props) => {
                 <textarea
                   id="message"
                   rows="4"
-                  className={`min-h-[400px] block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
+                  className={`min-h-[400px] block p-2.5 w-full text-3xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
                   readOnly
                   defaultValue={sol}
                 ></textarea>
