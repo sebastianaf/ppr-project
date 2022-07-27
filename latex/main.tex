@@ -71,15 +71,19 @@ A las variables del modelo básico se le agregan las siguientes:
 \begin{itemize}
     \item $tiempo\textunderscore min\textunderscore x\textunderscore actor$: Son los tiempos mínimos que debe permanecer cada actor en las escenas para grabar donde $tiempo\textunderscore  x\textunderscore actor_i \in \mathbb{N}$ con $i \in [1..n\textunderscore actores]$ es el tiempo con respecto al orden inicial de las escenas, esta variable se usa para saber si las condiciones de $Disponibilidad$ pueden llegar a ser insactifactibles.
     \item $disponibilidad\textunderscore incumplida$: Es la información de los actores a los que la solución no les puede garantizar el cumplimiento de la restricción de disponibilidad donde $disponibilidad\textunderscore incumplida_i \in \{0,1\}$ con $i \in [1..n(Disponibilidad)]$ donde $1$ indica si la solución del problema incumple con la restricción de disponibilidad del actor $i$ y $0$ lo contrario.
+    \item $evitar\textunderscore incumplida$: Es la información de los actores a los que la solución no les puede garantizar que se eviten; Por evitar se entiende que no asistan a la misma escena. $evitar\textunderscore incumplida_i \in \{0,1\}$ con $i \in [1..n(Evitar)]$ donde $1$ indica que no se puede garantizar que la pareja de actores $i$ se eviten y $0$ lo contrario.
 \end{itemize}
 
 \subsection{Restricciones}
 A las restricciones del modelo básico se le agregan las siguientes:
 \begin{itemize}
-    \item $\forall i\sum_{j=1}^{n\textunderscore escenas}$  $Duracion_j * Escenas_{i,j} = tiempo\textunderscore x\textunderscore actor$\newline
+    \item $\forall i\sum_{j=1}^{n\textunderscore escenas}$  $Duracion_j * Escenas_{i,j} = tiempo\textunderscore min\textunderscore x\textunderscore actor$\newline
           donde $i \in [1..n\textunderscore actores]$.
-    \item $\forall i\sum_{j=1}^{n\textunderscore escenas}$  $Duracion[orden\textunderscore escenas_j] * Escenas\textunderscore_{i,j} = tiempo\textunderscore min\textunderscore x\textunderscore actor$\newline
-          donde $i \in [1..n\textunderscore actores]$.
+    \item $\forall i$  if $Disponibilidad_{i,2} > 0$ then if $tiempo\textunderscore min\textunderscore x\textunderscore actor <= Disponibilidad_{i,2}$ then $tiempo\textunderscore min\textunderscore x\textunderscore actor <= Disponibilidad_{i,2}$ else $disponibilidad\textunderscore incumplida_i = 1$\newline
+          donde $i \in [1..n(Disponibilidad)]$.
+    \item $\forall j \forall i$ $evitar\textunderscore incumplida_j=1$   \newline donde $i \in [1..n\textunderscore escenas] \land j \in [1..n(Evitar)] \land Escenas[Evitar[j,1],i]=1 \land Escenas[Evitar[j,1],i]=Escenas[Evitar[j,2],i]$
+
+    
 \end{itemize}
 
 \end{document}
