@@ -16,15 +16,32 @@ def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/solve', methods=['POST'])
+@app.route('/solve1', methods=['POST'])
 @cross_origin("*") 
-def upload_file():
+def upload_file1():
     result = "" 
     target = os.path.join(getcwd(), 'uploads') 
     try:
         data = request.form['dznfile']
-        with open(os.path.join(target,'data.dzn'),'w') as dznfile : dznfile.write(data)
-        command = "./minizinc/bin/minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno1.mzn') + " " + os.path.join(target, 'data.dzn') + '>' + os.path.join(target, 'result.txt')
+        with open(os.path.join(target,'data1.dzn'),'w') as dznfile : dznfile.write(data)
+        command = "./minizinc/bin/minizinc --solver Gecode " + os.path.join(getcwd(),'models', 'Desenfreno1.mzn') + " " + os.path.join(target, 'data1.dzn') + '>' + os.path.join(target, 'result1.txt')
+        result = subprocess.Popen(command, shell=True)
+        result.wait()
+        f = open(os.path.join(target, 'result.txt'))
+        result = f.read()
+        return result
+    except :
+        return "El archivo no es válido"
+
+@app.route('/solve2', methods=['POST'])
+@cross_origin("*") 
+def upload_file2():
+    result = "" 
+    target = os.path.join(getcwd(), 'uploads') 
+    try:
+        data = request.form['dznfile']
+        with open(os.path.join(target,'data2.dzn'),'w') as dznfile : dznfile.write(data)
+        command = "./minizinc/bin/minizinc --solver Gecode " + os.path.join(getcwd(),'models', 'Desenfreno2.mzn') + " " + os.path.join(target, 'data2.dzn') + '>' + os.path.join(target, 'result2.txt')
         result = subprocess.Popen(command, shell=True)
         result.wait()
         f = open(os.path.join(target, 'result.txt'))

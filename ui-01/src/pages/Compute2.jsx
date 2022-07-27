@@ -97,7 +97,7 @@ const Compute = (props) => {
                         data.append("dznfile", params);
 
                         const res1 = await axios({
-                          url: `${api2.host}/solve`,
+                          url: `${api2.host}/solve2`,
                           method: "POST",
                           data,
                           params: { model: 0 },

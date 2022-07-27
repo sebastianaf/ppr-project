@@ -37,10 +37,10 @@ const Sidebar = (props) => {
         <ul className={`py-4 px-1`}>
           <SidebarTitle data={{ title: `Modelos` }} />
           <SidebarItem
-            data={{ title: `Modelo 1`, icon: faUserGroup, to: `/compute` }}
+            data={{ title: `Modelo básico`, icon: faUserGroup, to: `/compute1` }}
           />
           <SidebarItem
-            data={{ title: `Modelo 2`, icon: faUsers, to: `/compute2` }}
+            data={{ title: `Modelo extendido`, icon: faUsers, to: `/compute2` }}
           />
         </ul>
       </div>
