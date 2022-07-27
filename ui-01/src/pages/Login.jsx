@@ -141,7 +141,7 @@ const Login = (props) => {
       </div>
     </div>
   ) : (
-    <Navigate to={`/compute`} />
+    <Navigate to={`/compute1`} />
   );
 };
 
