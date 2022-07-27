@@ -12,7 +12,7 @@ import Spinner from "../components/Spinner";
 
 const Login = React.lazy(() => import("../pages/Login"));
 const Compute1 = React.lazy(() => import("../pages/Compute1"));
-const Compute2 = React.lazy(() => import("../pages/Compute1"));
+const Compute2 = React.lazy(() => import("../pages/Compute2"));
 const Page404 = React.lazy(() => import("../pages/Page404"));
 
 const App = (props) => {
