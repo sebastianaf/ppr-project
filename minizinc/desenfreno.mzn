@@ -39,11 +39,16 @@ constraint forall( i in 1..n_actores )(
     j >= primera_escena(i)  /\  j <= ultima_escena(i))(
       Duracion[orden_escenas[j]] ) * 
       Escenas[i,n_escenas+1] = costo_x_actor[i]);
-         
-%indomain_min,indomain_median,indomain_random,indomain_split
-%input_order, first_fail,smallest,dom_w_deg
-%solve :: int_search(orden_escenas, first_fail, indomain_min)  minimize costo_total;
 
+%Eliminación de simetrías
+%constraint symmetry_breaking_constraint(costo_total < costo_maximo);
+%constraint f < costo_maximo; % - cota superior
+%constraint symmetry_breaking_constraint(costo_total >= sum(costo_x_escena));
+%constraint f >= sum(costo_x_escena); % - cota inferior
+
+%Estrategias de búsqueda
+%indomain_min,indomain_median,indomain_random,ndomain_split
+%input_order, first_fail,smallest,dom_w_deg
 solve :: int_search(orden_escenas, dom_w_deg, indomain_min)  minimize costo_total;
  
 output [ 
