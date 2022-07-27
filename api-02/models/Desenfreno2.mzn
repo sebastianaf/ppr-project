@@ -86,7 +86,7 @@ output [
   
   "Orden de las escenas: \t\t\t\t\(orden_escenas)\n" ++
   "Disponibilidad de Actores sin cumplir: \t\(disponibilidad_incumplida)\n"++
-  "Actores ha evitar sin cumplir: \t\t\(evitar_incumplida)\n"
+  "Actores a evitar sin cumplir: \t\t\(evitar_incumplida)\n"
 ];
 output [ "\n ESCENAS \n"];
 output [ show_int(1,orden_escenas[i])++" " |i in 1..n_escenas ] ++[ "\n"];
