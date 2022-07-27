@@ -1,0 +1,15 @@
+ACTORES = {Actor1, Actor2, Actor3} ;
+
+Escenas = [| 0,1,0,0,0,0,10
+           | 0,1,1,1,0,1,20
+           | 0,0,0,0,1,1,15|]; 
+           
+Duracion = [2,1,1,1,3,4];
+
+
+%Solución:
+%Orden de las Escenas: [1, 4, 3, 2, 6, 5]
+%Costo: 255
+%----------
+%==========
+%Finished in 137msec
