@@ -19,8 +19,8 @@ var int: costo_total = sum(costo_x_actor);
 
 %Variables adicionales
 array[1..n_actores] of var int:  tiempo_min_x_actor;
-array[1..n_actores] of var 0..1: disponibilidad_x_actor_no_cumplida;
-array[1..m] of var 0..1: evitar_no_cumplibles; 
+array[1..n_actores] of var 0..1: disponibilidad_incumplida;
+array[1..m] of var 0..1: evitar_incumplida; 
 
 int: m = round (length(Evitar)/2);
 int: n = round(length(Disponibilidad)/2);
@@ -61,13 +61,13 @@ constraint forall( i in 1..n  )(
   if Disponibilidad[i,2] > 0 then 
     if tiempo_min_x_actor[i]  <= Disponibilidad[i,2] then 
       tiempo_min_x_actor[i] <= Disponibilidad[i,2]
-    else disponibilidad_x_actor_no_cumplida[i] = 1 endif 
+    else disponibilidad_incumplida[i] = 1 endif 
   endif);
 
 constraint forall(j in 1..m, i in 1..n_escenas)(
   if Escenas[Evitar[j,1],i] == 1 /\ 
     Escenas[Evitar[j,1],i] ==  Escenas[Evitar[j,2],i] then
-    evitar_no_cumplibles[j] = 1 endif);
+    evitar_incumplida[j] = 1 endif);
 
 %Eliminación de simetrías
 %constraint symmetry_breaking_constraint(costo_total < costo_maximo);
@@ -85,8 +85,8 @@ output [
   "Costo minimo posible: \t\t\t\t\(costo_total)\n\n" ++
   
   "Orden de las escenas: \t\t\t\t\(orden_escenas)\n" ++
-  "Disponibilidad de Actores sin cumplir: \t\(disponibilidad_x_actor_no_cumplida)\n"++
-  "Actores ha evitar sin cumplir: \t\t\(evitar_no_cumplibles)\n"
+  "Disponibilidad de Actores sin cumplir: \t\(disponibilidad_incumplida)\n"++
+  "Actores ha evitar sin cumplir: \t\t\(evitar_incumplida)\n"
 ];
 output [ "\n ESCENAS \n"];
 output [ show_int(1,orden_escenas[i])++" " |i in 1..n_escenas ] ++[ "\n"];
