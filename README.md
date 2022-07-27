@@ -4,7 +4,7 @@ This code project is a final project to Programming Restrictions Paradigm of Uni
 This repo contains all about the project.
 
 ## Requirements
-This code is built using Minizinc, NodeJS with ExpressJS, ReactJS with CoreUI and PostgreSQL all over containers, To run this project make sure to install [Docker compose](https://docs.docker.com/).
+This code is built using Minizinc, NodeJS with ExpressJS, ReactJS with Tailwindcss and PostgreSQL all over containers, To run this project make sure to install [Docker compose](https://docs.docker.com/).
 
 ## Repository content
 
@@ -18,7 +18,7 @@ Inside `latex` folder you can find all the source code releated with the documen
 Inside `api-01` folder you can find the main API Rest source code in NodeJS
 
 ### 4. API Rest service to run Minizinc.
-Inside `api-01` folder you can find the main API Rest source code in NodeJS
+Inside `api-02` folder you can find the main API Rest source code in NodeJS
 
 ### 4. Web ui service
 Inside `ui-01` folder is the source code of the Web GUI to use the solutions.
