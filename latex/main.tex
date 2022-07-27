@@ -55,6 +55,46 @@ A continuación se describen los elementos que componen el problema según el pa
     \item $min(\sum_{i=1}^{n\textunderscore actores}costo\textunderscore x\textunderscore actor$)
 \end{itemize}
 
+\subsection{Pruebas}
+A continuación se presentan los escenarios de pruebas a los que se sometió el modelo usando Minizinc, el equipo usado para correr las pruebas tiene un procesador Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz con 16.0 GB (15.8 GB usable) de RAM DDR4 bus 2400MHz.\newline
+Se adjuntan los escenarios de prueba.
+
+\subsubsection{test01_m1_a3_e5.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test01_m1.png}
+\end{center}
+
+\subsubsection{test02_m1_a4_e5.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test02_m1.png}
+\end{center}
+
+\subsubsection{test03_m1_a6_e6.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test03_m1.png}
+\end{center}
+
+\subsubsection{test03_m1_a7_e9.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test04_m1.png}
+\end{center}
+
+\subsection{Conclusiones}
+\subsubsection{Pruebas de tiempo para el modelo básico}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{img/pruebasModelo1.png}
+\end{center}
+Después de ejecutar las pruebas de los diferentes escenarios sobre el primer modelo del problema con tres diferentes solvers se puede evidenciar que $Gecode$ tiene un mejor tiempo promedio de solición seguido por $Chuffed$ y en el último puesto se tiene a $Coin-BC$. \newline\newline
+
+Al tener un problema que se basa en el ordenamiento de las escenas llegamos a la conclusión que esta es la variable mas relevante que incide en el tiempo de solución del problema. Podríamos indicar a pesar que el número de actores de la prueba final es aproximadamente el doble de la cantidad de la prueba final, tener que ordenarlos en 1.5 veces mas el número de escenas tuvo un impacto notable en el rendimiento.
+
+\subsection{Estrategias de distribución}
+Analizando las estrategias de distribucióon se usó el solver Gecode Gist con su herramienta para visualizar la búsqueda que permite ver claramente las diferencias las distribuciones. Se uso el archivo de pruebas con mayor extenisión en actores y escenas.
+\subsubsection{Nodos explorados para test04_m1_a7_e9.dzn}
+\begin{center}
+    \includegraphics[width=0.80\textwidth]{img/estrategiasDeDistribucion.png}
+\end{center}
+
 \section{Modelo extendido}
 A continuación se describe el contenido del modelo extendido. \newline
 
@@ -82,8 +122,56 @@ A las restricciones del modelo básico se le agregan las siguientes:
     \item $\forall i$  if $Disponibilidad_{i,2} > 0$ then if $tiempo\textunderscore min\textunderscore x\textunderscore actor <= Disponibilidad_{i,2}$ then $tiempo\textunderscore min\textunderscore x\textunderscore actor <= Disponibilidad_{i,2}$ else $disponibilidad\textunderscore incumplida_i = 1$\newline
           donde $i \in [1..n(Disponibilidad)]$.
     \item $\forall j \forall i$ $evitar\textunderscore incumplida_j=1$   \newline donde $i \in [1..n\textunderscore escenas] \land j \in [1..n(Evitar)] \land Escenas[Evitar[j,1],i]=1 \land Escenas[Evitar[j,1],i]=Escenas[Evitar[j,2],i]$
-
-    
 \end{itemize}
+
+\subsection{Función objetivo}
+Al igual que la función objetivo del modelo básico, el modelo extendido intenta minimizar el costo total de la nómina de los actores a partir de la variable $costo\textunderscore x\textunderscore\ actor$
+\begin{itemize}
+    \item $min(\sum_{i=1}^{n\textunderscore actores}costo\textunderscore x\textunderscore actor$)
+\end{itemize}
+
+\subsection{Pruebas}
+A continuación se presentan los escenarios de pruebas a los que se sometió el modelo usando Minizinc, el equipo usado para correr las pruebas tiene un procesador Intel(R) Core(TM) i7-10510U CPU @ 1.80GHz   2.30 GHz con 16.0 GB (15.8 GB usable) de RAM DDR4 bus 2400MHz.\newline
+Se adjuntan los escenarios de prueba.
+
+\subsubsection{test01_m2_a3_e5.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test05_m2.png}
+\end{center}
+
+\subsubsection{test02_m2_a4_e5.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test06_m2.png}
+\end{center}
+
+\subsubsection{test03_m2_a6_e6.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test07_m2.png}
+\end{center}
+
+\subsubsection{test03_m2_a7_e9.dzn}
+\begin{center}
+    \includegraphics[width=0.35\textwidth]{img/test08_m2.png}
+\end{center}
+
+\subsection{Conclusiones}
+\subsubsection{Pruebas de tiempo para el modelo extendido}
+\begin{center}
+    \includegraphics[width=0.8\textwidth]{img/pruebasModelo2.png}
+\end{center}
+Después de ejecutar las pruebas de los diferentes escenarios sobre el modelo extendido del problema con tres diferentes solvers se puede evidenciar que $Gecode$ tiene un mejor tiempo promedio de solición cuando el número de actores y escenas apenas se esta incrementando, luego $Chuffed$ toma la delantera en el mejor tiempo de solución. Por último y en todos los casos se tiene a $Coin-BC$. \newline\newline
+
+Teniendo en cuenta que en algunos casos las restricciones adicionales generaron mas condiciones para hallar la mejor solución de cada problema podemos concluir que el tiempo de solución aumentó en aproximadamente el doble comparado con los escenarios del modelo inicial, el cual tenía la misma distribución de actores y escenas pero las dos restricciones adicionales de Disponibilidad y Evitar.
+
+\section{Despliegue del proyeto}
+El código fuente del proyecto se encuentra disponible en el repositorio de $GitHub$ \url{https://github.com/sebastianaf/ppr-project}, la versión funcional del código se encuentra desplegada en la web. Para accederla se debe tener en cuenta la siguiente información:\newline\newline
+
+\subsection{Credenciales de acceso}
+\textbf{Sitio web:} \url{https://ppr.enerfris.com}\newline
+\textbf{Usuario:} admin\newline
+\textbf{Contraseña:} ppr22
+\newline\newline
+
+El servidor con la aplicación web del proyecto está disponible de Lunes a Domingo de 8am a 12 am.
 
 \end{document}
