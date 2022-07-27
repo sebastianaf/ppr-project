@@ -19,7 +19,6 @@ var int: costo_total = sum(costo_x_actor);
 
 %Variables adicionales
 array[1..n_actores] of var int:  tiempo_min_x_actor;
-array[1..n_actores] of var int: cant_escenas_x_actor;
 array[1..n_actores] of var 0..1: disponibilidad_x_actor_no_cumplida;
 array[1..m] of var 0..1: evitar_no_cumplibles; 
 
