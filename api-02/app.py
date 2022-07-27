@@ -24,7 +24,7 @@ def upload_file1():
     try:
         data = request.form['dznfile']
         with open(os.path.join(target,'data1.dzn'),'w') as dznfile : dznfile.write(data)
-        command = "./minizinc/bin/minizinc --solver Gecode " + os.path.join(getcwd(),'models', 'Desenfreno1.mzn') + " " + os.path.join(target, 'data1.dzn') + '>' + os.path.join(target, 'result1.txt')
+        command = "./minizinc/bin/minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno1.mzn') + " " + os.path.join(target, 'data1.dzn') + '>' + os.path.join(target, 'result1.txt')
         result = subprocess.Popen(command, shell=True)
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
@@ -41,7 +41,7 @@ def upload_file2():
     try:
         data = request.form['dznfile']
         with open(os.path.join(target,'data2.dzn'),'w') as dznfile : dznfile.write(data)
-        command = "./minizinc/bin/minizinc --solver Gecode " + os.path.join(getcwd(),'models', 'Desenfreno2.mzn') + " " + os.path.join(target, 'data2.dzn') + '>' + os.path.join(target, 'result2.txt')
+        command = "./minizinc/bin/minizinc --solver COIN-BC " + os.path.join(getcwd(),'models', 'Desenfreno2.mzn') + " " + os.path.join(target, 'data2.dzn') + '>' + os.path.join(target, 'result2.txt')
         result = subprocess.Popen(command, shell=True)
         result.wait()
         f = open(os.path.join(target, 'result.txt'))
