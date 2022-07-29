@@ -5,4 +5,5 @@ RUN npm install
 COPY [".","/usr/uv/app/"]
 RUN npm run build
 EXPOSE ${API_PORT}
-CMD ["npm", "run", "serve"]
+CMD ["dist/index.js"]
+ENTRYPOINT ["node"]
