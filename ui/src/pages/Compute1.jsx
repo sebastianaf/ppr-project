@@ -138,7 +138,7 @@ const Compute = (props) => {
                     <Spinner loading />
                   ) : (
                     <FontAwesomeIcon
-                      className={`text-white mr-2`}
+                      className={`text-cyan-500 mr-2`}
                       icon={faPlay}
                     />
                   )}
