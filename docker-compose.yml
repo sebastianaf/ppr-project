@@ -20,10 +20,10 @@ services:
       dockerfile: Dockerfile
       args:
         API_PORT: ${API_PORT}
-    ports:
-      - 9010:${API_PORT}
+#    ports:
+#      - 9010:${API_PORT}
     depends_on:
-      - uv-ppr-db-01
+      - uv-ppr-db
     networks:
       - uv-ppr
   
@@ -39,15 +39,15 @@ services:
         limits:
           cpus: ${API2_MAX_CPUS}
           memory: ${API2_MAX_RAM}
-    ports:
-      - 9011:5000
+#    ports:
+#      - 9011:5000
     depends_on:
-      - uv-ppr-db-01
+      - uv-ppr-db
     networks:
       - uv-ppr
 
-  uv-ppr-db-01:
-    container_name: uv-ppr-db-01
+  uv-ppr-db:
+    container_name: uv-ppr-db
     restart: always
     image: postgres:latest
     environment:
@@ -57,29 +57,29 @@ services:
       TZ: ${TZ}
     volumes:
       - ./db:/var/lib/postgresql/data
-    ports:
-      - 9020:5432
+#    ports:
+#      - 9020:5432
     networks:
       - uv-ppr
 
-  uv-ppr-ui-01:
-    container_name: uv-ppr-ui-01
-    image: uv-ppr-ui-01
+  uv-ppr-ui:
+    container_name: uv-ppr-ui
+    image: uv-ppr-ui
     restart: always
     environment:
       REACT_APP_UI_PORT: ${REACT_APP_UI_PORT}
       REACT_APP_API_HOST: ${REACT_APP_API_HOST}
       REACT_APP_API2_HOST: ${REACT_APP_API2_HOST}
     build:
-      context: ./ui-01
+      context: ./ui
       dockerfile: Dockerfile
       args:
         REACT_APP_UI_PORT: ${REACT_APP_UI_PORT}
     depends_on:
       - uv-ppr-api-01
       - uv-ppr-api-02
-    ports:
-      - 9030:${REACT_APP_UI_PORT}
+#    ports:
+#      - 9030:${REACT_APP_UI_PORT}
     networks:
       - uv-ppr
 
@@ -92,8 +92,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PG_ADMIN_PASSWORD}
     depends_on:
       - uv-ppr-db
-    ports:
-      - 9040:80
+#    ports:
+#      - 9040:80
     networks:
       - uv-ppr
 

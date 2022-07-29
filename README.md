@@ -37,7 +37,7 @@ cd ppr-project
 ```
 
 ### 3. Deploy the services
-Check first if you have `docker` installed typing `docker compose --version` and next deploy the app with:
+Check first if you have `docker` installed typing `docker compose --version` and next uncomment the local service's ports deleting the `#` charapter from the `docker-compose.yml` file and then deploy the app with:
 ```
 docker compose -p uv-ppr -up -d --build
 ```
