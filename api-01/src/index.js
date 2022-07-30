@@ -59,7 +59,7 @@ app.post("/db-check", async (req, res) => {
   }
 });
 
-toInteger(process.env.API_CREATE_ADMIN) === "1" &&
+toInteger(process.env.API_CREATE_ADMIN) === 1 &&
   (async () => {
     try {
       const user = await service.createfirstUser();
