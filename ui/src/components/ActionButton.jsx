@@ -12,7 +12,7 @@ const ActionButton = (props) => {
       focus:ring-cyan-500 duration-500 cursor-pointer`}
     >
       <Spinner loading={loading} />
-      <span className={`${loading ? `hidden` : ``} duration-500`}>{data.title}</span>
+      <span className={`${loading ? `hidden` : ``} duration-500 text-base`}>{data.title}</span>
     </div>
   );
 };

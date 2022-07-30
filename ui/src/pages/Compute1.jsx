@@ -30,7 +30,7 @@ const Compute = (props) => {
               <textarea
                 id="comment"
                 rows="4"
-                className="min-h-[400px] block p-2.5 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 "
+                className="min-h-[400px] block p-2.5 w-full text-lg md:text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 "
                 placeholder="Parámetros..."
                 value={params}
                 onChange={(e) => {
@@ -49,7 +49,7 @@ const Compute = (props) => {
               >
                 <label
                   htmlFor="message"
-                  class={`block m-2 text-sm font-medium text-gray-900 dark:text-gray-400`}
+                  className={`block m-2 text-sm font-medium text-gray-900 dark:text-gray-400`}
                 >
                   Respuesta
                 </label>
@@ -57,7 +57,7 @@ const Compute = (props) => {
                 <textarea
                   id="message"
                   rows="4"
-                  className={`min-h-[400px] block p-2.5 w-full text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
+                  className={`min-h-[400px] block p-2.5 w-full text-lg md:text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
                   readOnly
                   value={sol}
                 ></textarea>
@@ -106,14 +106,27 @@ const Compute = (props) => {
                           data,
                           params: { model: 0 },
                           config: {
-                            headers: { "Content-Type": "multipart/form-data" },
+                            headers: {
+                              "Content-Type": "multipart/form-data",
+                            },
                           },
                         });
-                        console.log(res1.data);
 
-                        setSol(res1.data);
-                        setLoading(false);
-                        setCalc(true);
+                        if (res1.data !== "") {
+                          console.log(res1.data);
+                          setSol(res1.data);
+                          setLoading(false);
+                          setCalc(true);
+                        } else {
+                          setModalOpen(true);
+                          setModalOptions({
+                            title: errorCodes.COMPUTE_ERROR.title,
+                            description: errorCodes.COMPUTE_ERROR.description,
+                            error: true,
+                          });
+                          setLoading(false);
+                          setCalc(false);
+                        }
                       } catch (error) {
                         setModalOpen(true);
                         setModalOptions({
@@ -138,7 +151,7 @@ const Compute = (props) => {
                     <Spinner loading />
                   ) : (
                     <FontAwesomeIcon
-                      className={`text-cyan-500 mr-2`}
+                      className={`text-white mr-2`}
                       icon={faPlay}
                     />
                   )}
@@ -147,7 +160,6 @@ const Compute = (props) => {
               </div>
             </div>
           </div>
-
           <p className="ml-auto text-xs text-gray-500 ">
             Aquí se deben escribir los parámetros del problema que se desea
             resolver.

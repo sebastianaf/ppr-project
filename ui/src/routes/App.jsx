@@ -8,12 +8,11 @@ import check from "../tools/check";
 import { connect } from "react-redux";
 import { setUser } from "../actions";
 
-import Spinner from "../components/Spinner";
-
 const Login = React.lazy(() => import("../pages/Login"));
 const Compute1 = React.lazy(() => import("../pages/Compute1"));
 const Compute2 = React.lazy(() => import("../pages/Compute2"));
 const Page404 = React.lazy(() => import("../pages/Page404"));
+const Loading = React.lazy(() => import("../pages/Loading"));
 
 const App = (props) => {
   const { setUser } = props;
@@ -30,12 +29,7 @@ const App = (props) => {
   return (
     <BrowserRouter>
       <Suspense
-        fallback={
-          <div className="flex justify-center items-center h-screen bg-slate-100">
-            <Spinner loading />
-            <div className="text-xl">Loading...</div>
-          </div>
-        }
+        fallback={<Loading/>}
       >
         <Routes>
           <Route exact path={`/login`} element={<Login />} />
