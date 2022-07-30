@@ -21,15 +21,18 @@ class UserService {
       name: "Admin",
       role: "admin",
     };
+    const salt = await bcryptjs.genSalt(10);
+    const encryptedPassword = await bcryptjs.hash(firstUser.password, salt);
     if (obj) {
-      const salt = await bcryptjs.genSalt(10);
-      const encryptedPassword = await bcryptjs.hash(firstUser.password, salt);
       return obj.update({
         password: encryptedPassword,
         ...firstUser,
       });
     } else {
-      return this.register(firstUser);
+      return this.register({
+        password: encryptedPassword,
+        ...firstUser,
+      });
     }
   }
 
