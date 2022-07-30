@@ -21,7 +21,6 @@ const Loading = () => {
         </div>
         <div className="flex justify-center items-center">
           <Spinner loading />
-          <div className="text-xl">Cargando...</div>
         </div>
       </div>
     </Transition>
