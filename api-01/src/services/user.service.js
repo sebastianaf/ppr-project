@@ -11,6 +11,28 @@ const { models } = sequelize;
 class UserService {
   constructor() {}
 
+  async createfirstUser() {
+    const obj = await models.User.findOne({ where: { alias: "admin" } });
+
+    const firstUser = {
+      alias: "admin",
+      password: `ppr22`,
+      idUser: 1,
+      name: "Admin",
+      role: "admin",
+    };
+    if (obj) {
+      const salt = await bcryptjs.genSalt(10);
+      const encryptedPassword = await bcryptjs.hash(firstUser.password, salt);
+      return obj.update({
+        password: encryptedPassword,
+        ...firstUser,
+      });
+    } else {
+      return this.register(firstUser);
+    }
+  }
+
   async login(data) {
     const { alias, password } = data;
     /**
