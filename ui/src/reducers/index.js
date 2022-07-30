@@ -25,10 +25,10 @@ const reducer = (state, action) => {
         ...state,
         open: action.payload,
       };
-    case "SET_HIDESIDEBAR":
+    case "SET_SIDEBAR":
       return {
         ...state,
-        hideSidebar: action.payload,
+        sidebar: action.payload,
       };
     default:
       return state;

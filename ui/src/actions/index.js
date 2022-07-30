@@ -23,7 +23,7 @@ export const setOpen = (payload) => ({
   payload,
 });
 
-export const setHideSidebar = (payload) => ({
-  type: "SET_HIDESIDEBAR",
+export const setSidebar = (payload) => ({
+  type: "SET_SIDEBAR",
   payload,
 });

@@ -8,6 +8,7 @@ const initialState = {
   user: null,
   open: true,
   modalOpen: false,
+  sidebar: false,
   loading: false,
   modalOptions: {
     title: "",

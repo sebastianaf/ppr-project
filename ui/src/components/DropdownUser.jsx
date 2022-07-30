@@ -8,7 +8,6 @@ import "../styles/index.css";
 
 //Redux
 import { connect } from "react-redux";
-import { setHideSidebar } from "../actions";
 import logout from "../tools/logout";
 
 function classNames(...classes) {
@@ -79,12 +78,7 @@ const DropdownUser = (props) => {
 };
 
 const mapState = (state) => ({
-  hideSidebar: state.hideSidebar,
   user: state.user,
 });
 
-const mapActions = {
-  setHideSidebar,
-};
-
-export default connect(mapState, mapActions)(DropdownUser);
+export default connect(mapState, null)(DropdownUser);

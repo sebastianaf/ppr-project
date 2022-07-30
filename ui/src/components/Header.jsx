@@ -2,15 +2,16 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import "../styles/index.css";
-
+import { Link } from "react-router-dom";
+import logo from "../assets/img/logo.png";
 import DropdownUser from "./DropdownUser";
 
 //Redux
 import { connect } from "react-redux";
-import { setHideSidebar } from "../actions";
+import { setSidebar, setOpen } from "../actions";
 
 const Header = (props) => {
-  const { hideSidebar } = props;
+  const { sidebar, setSidebar, setOpen } = props;
   return (
     <>
       <div
@@ -20,9 +21,13 @@ const Header = (props) => {
           icon={faBars}
           className={`icon cursor-pointer mx-2 md:invisible`}
           onClick={() => {
-            setHideSidebar(!hideSidebar);
+            setSidebar(!sidebar);
+            setOpen(true);
           }}
         />
+        <Link className="cursor-pointer md:hidden" to="/compute1">
+          <img className="max-h-[48px]" src={logo} alt="logo" />
+        </Link>
         <DropdownUser />
       </div>
       <div className={`overflow-x-hidden overflow-y-auto`}></div>
@@ -31,12 +36,13 @@ const Header = (props) => {
 };
 
 const mapState = (state) => ({
-  hideSidebar: state.hideSidebar,
+  sidebar: state.sidebar,
   user: state.user,
 });
 
 const mapActions = {
-  setHideSidebar,
+  setSidebar,
+  setOpen
 };
 
 export default connect(mapState, mapActions)(Header);

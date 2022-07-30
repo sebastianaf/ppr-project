@@ -34,4 +34,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(SidebarItem);
+export default connect(mapStateToProps,null)(SidebarItem);

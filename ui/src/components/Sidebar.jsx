@@ -1,5 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faUserGroup, faUsers } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faUserGroup,
+  faUsers,
+} from "@fortawesome/free-solid-svg-icons";
 
 import SidebarTitle from "../components/SidebarTitle";
 import SidebarItem from "../components/SidebarItem";
@@ -12,14 +16,16 @@ import { setOpen } from "../actions";
 import "../styles/index.css";
 
 const Sidebar = (props) => {
-  const { open, setOpen, hideSidebar, app } = props;
+  const { open, setOpen, app } = props;
   return (
     <div
-      className={`${open ? `w-[270px]` : `w-[70px]`} ${
-        !hideSidebar && `hidden`
+      className={`${
+        open ? `w-[270px]` : `w-[70px]`
       } md:flex flex-col flex-none z-10 bg-slate-700 h-screen transition-[width] duration-500`}
     >
-      <div className={`p-4 bg-slate-900 h-auto duration-500 cursor-pointer select-none`}>
+      <div
+        className={`p-4 bg-slate-900 h-auto duration-500 cursor-pointer select-none`}
+      >
         <div className={`flex flex-col items-center justify-center`}>
           <img src={logo} alt={`logo`} className={`max-h-[100px]`} />
           <div
@@ -37,7 +43,11 @@ const Sidebar = (props) => {
         <ul className={`py-4 px-1`}>
           <SidebarTitle data={{ title: `Modelos` }} />
           <SidebarItem
-            data={{ title: `Modelo básico`, icon: faUserGroup, to: `/compute1` }}
+            data={{
+              title: `Modelo básico`,
+              icon: faUserGroup,
+              to: `/compute1`,
+            }}
           />
           <SidebarItem
             data={{ title: `Modelo extendido`, icon: faUsers, to: `/compute2` }}
@@ -66,7 +76,6 @@ const mapStateToProps = (state) => {
   return {
     app: state.app,
     open: state.open,
-    hideSidebar: state.hideSidebar,
   };
 };
 

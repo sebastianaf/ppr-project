@@ -25,13 +25,16 @@ const Compute = (props) => {
     <ProtectedRoute>
       <DefaultLayout>
         <ComputeLayout>
+          <div className="text-lg md:text-xl font-bold m-3 md:m-5">
+            Modelo extendido
+          </div>
           <div>
             <div className="mb-4 w-full bg-gray-50 rounded-lg border border-gray-200 ">
               <div className="p-3 bg-white rounded-t-lg">
                 <textarea
                   id="comment"
                   rows="4"
-                  className="min-h-[400px] block p-2.5 w-full text-lg md:text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 "
+                  className="min-h-[400px] block p-2.5 w-full text-lg md:text-xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500 "
                   placeholder="Parámetros..."
                   value={params}
                   onChange={(e) => {
@@ -58,7 +61,7 @@ const Compute = (props) => {
                   <textarea
                     id="message"
                     rows="4"
-                    className={`min-h-[400px] block p-2.5 w-full text-lg md:text-2xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
+                    className={`min-h-[400px] block p-2.5 w-full text-lg md:text-xl text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-cyan-500 focus:border-cyan-500`}
                     readOnly
                     value={sol}
                   ></textarea>
