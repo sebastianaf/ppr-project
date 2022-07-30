@@ -25,13 +25,13 @@ class UserService {
     const encryptedPassword = await bcryptjs.hash(firstUser.password, salt);
     if (obj) {
       return obj.update({
-        password: encryptedPassword,
         ...firstUser,
+        password: encryptedPassword,
       });
     } else {
       return this.register({
-        password: encryptedPassword,
         ...firstUser,
+        password: encryptedPassword,
       });
     }
   }
